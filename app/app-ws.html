@@ -1,0 +1,260 @@
+<!--
+Copyright (C) 2016 Application Development and Delivery <adnd@hpe.com>
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted, provided that the above
+copyright notice and this permission notice appear in all copies.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-ajax/iron-ajax.html">
+
+<link rel="import" href="app-locale.html">
+
+<!--
+Description:
+
+Represents an AJAX HTTP service call. The HTTP call will be POST by default and
+the response must be in JSON format. The "before-ws-call" event will be
+fired before the service call. After the service call is finished the
+"after-ws-call" event fired. In case of any service error the
+"ws-error" event will be fired before the "after-ws-call" event or if
+there was no error the "ws-success" event will be fired before the
+"after-ws-call" event. The response data will be in the "data" attribute if
+there was any.
+
+Parameters:
+
+logonid         {String}     logon ID of the user (mandatory)
+service         {String}     name of the service that has to call (mandatory)
+wait            {Boolean}    flag that indicates that the service is being call
+                             or not
+params          {String}     custom parameters for the service as an XML string
+                             (optional)
+data            {Object}     output parameter that will be a javascript object
+                             based on the AJAX call result
+filter          {String}     filter attrivute
+                             (optional)
+array           {Boolean}    result must be converted to array or not
+                             Default: false
+failed          {Boolean}    Does the service call failed or not
+-->
+
+<dom-module id="app-ws">
+
+    <!-- Style of the component -->
+
+    <style>
+        paper-toast.error {
+            --paper-toast-background-color:         #DD2C00;
+        }        
+    </style>
+
+    <!-- Content of the component -->
+
+    <template>
+        
+        <!-- Loading the requested locale -->
+
+        <app-locale locales="{{locale}}"></app-locale>
+        
+        <!-- WEB service -->
+        
+        <iron-ajax id="ws" method="POST" handle-as="text" content-Type="application/x-www-form-urlencoded" on-response="_wsResponse" on-error="_wsFailed"></iron-ajax>
+
+        <!-- Toast messages -->
+        
+        <paper-toast id="toasterror" class="error" text="{{locale.webservicefail}}"></paper-toast>
+    </template>
+
+    <!-- Script for the component -->
+
+    <script>
+        /*globals Polymer U Util P location*/
+
+        Polymer({
+            is:                     'app-ws',
+
+            /**
+             * Attributes.
+             */
+
+            properties: {
+                service:            { type: String, notify: true, readyOnly: false },
+                wait:               { type: Boolean, readyOnly: false },
+                params:             { type: String, notify: true, readyOnly: false },
+                data:               { type: Object, notify: true, readyOnly: false },
+                filter:             { type: String, value: false, notify: true, readyOnly: false },
+                array:              { type: Boolean, value: false, notify: true, readyOnly: false },
+                failed:             { type: Boolean, value: false, notify: true, readyOnly: false }
+            },
+
+            /**
+             * Executes the AJAX HTTP call. The "before-ws-call" event will be
+             * fired before the service call.
+             *
+             * @param     {String}     params   parameters of the service
+             */
+
+            execute: function(params) {
+
+                // Reference to the current object
+                
+                var self = this;
+
+                // Setting the request URL
+
+                //self.url = location.href.split('/')[0] + '//tandaserver.azurewebsites.net/tanda/service';
+                self.url = 'https://tandaserver.azurewebsites.net/tanda/service';
+
+                // Validating request
+
+                if (!self.service) {
+                    throw new Error('Missing "service" parameter');
+                }
+
+                // Preparing
+
+                var ws = self.$.ws;
+                var timestamp = new Date().getTime();
+                self.data = undefined;
+
+                // Setting the URL of the HTTP request
+
+                ws.url = self.url + '/' + self.service + '?' + timestamp;
+
+                // Setting the body parameters if it is specified
+
+                params = params || self.params;
+                
+                if (params) {
+                    ws.body = 'data=' + encodeURI(params);
+                }
+
+                // Fires the before-ws-call event
+
+                self.failed = false;
+                self.fire('before-call');
+
+                // Executing the AJAX call
+
+                ws.generateRequest();
+            },
+
+            /**
+             * Callback function that will be called when something went to
+             * wrong during the service call. The "ws-error" event will be
+             * fired and after it the "after-ws-call" event as well.
+             * 
+             * @param     {Object}     event    HTTP response event
+             */
+
+            _wsFailed: function(event) {
+
+                // Reference to the current object
+                
+                var self = this;
+
+                // Processing the response
+
+                self.failed = true;
+                self._wsResponse(event);
+            },
+
+            /**
+             * Callback function that will be called after the service
+             * calling has been finished. If there is any error during the
+             * calling the "ws-error" event will be fired. If there was no
+             * error the "ws-success" event will be fired. After the AJAX call
+             * has been finished the "after-ws-call" event will be fired. This
+             * event does not depend on the success of the calling, so it will
+             * fired after a "ws-error" or "ws-success" events as well.
+             * 
+             * @param     {Object}     event    HTTP response event
+             */
+
+            _wsResponse: function(event) {
+
+                // Reference to the current object
+
+                var self = this;
+
+                // Sets the service is running flag
+
+                self.wait = false;
+
+                // Check response status
+
+                var xhr = event.detail.xhr || event.detail.request.xhr;
+                var data;
+
+                if (xhr.status == 200) {
+                    data = event.detail.response;
+
+                    if (data && data !== '') {
+
+                        // Trying to convert the response to JSON
+
+                        try {
+                            data = JSON.parse(data);
+                        } catch (e) {
+                            // No handler
+                        }
+                    } else {
+                        data = undefined;
+                    }
+
+                    // Filtering data
+    
+                    if (self.filter) {
+                        data = Util.getAttr(data, self.filter);
+                    }
+    
+                    if (self.array && !Util.isArray(data)) {
+                        if (data === null || data === undefined) {
+                            self.data = [];
+                        } else {
+                            self.data = [data];
+                        }
+                    } else {
+                        self.data = data;
+                    }
+
+                    // Fires the ws-success event
+                    
+                    self.fire('success', {
+                        event:  event,
+                        data:   self.data,
+                        failed: self.failed
+                    });
+                } else {
+
+                    // Showing toast error message
+                    
+                    self.$.toasterror.open();
+                    
+                    // Error occured during the call
+                    
+                    self.data = undefined;
+                    self.fire('error');
+                }                
+
+                // Fires the after-ws-call event
+
+                self.fire('after-call', {
+                    event:  event,
+                    data:   self.data,
+                    failed: self.failed
+                });
+            }
+        });
+    </script>
+</dom-module>

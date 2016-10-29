@@ -1,0 +1,332 @@
+<!--
+Copyright (C) 2016 Application Development and Delivery <adnd@hpe.com>
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted, provided that the above
+copyright notice and this permission notice appear in all copies.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/paper-toolbar/paper-toolbar.html">
+<link rel="import" href="../bower_components/paper-spinner/paper-spinner.html">
+<link rel="import" href="../bower_components/paper-menu/paper-menu.html">
+<link rel="import" href="../bower_components/paper-menu-button/paper-menu-button.html">
+<link rel="import" href="../bower_components/paper-item/paper-item.html">
+<link rel="import" href="../bower_components/iron-icons/iron-icons.html">
+<link rel="import" href="../bower_components/paper-icon-button/paper-icon-button.html">
+
+<!--
+Description:
+
+Titlebar of the application.
+-->
+
+<dom-module id="app-titlebar">
+
+    <!-- Style of the component -->
+
+    <style>    
+        paper-toolbar.toolbar {
+            --paper-toolbar-background:     #425462;
+            --paper-toolbar-title: {
+                font-size:                  28px;
+                font-weight:                bold;
+                color:                      #FFFFFF;
+            };
+        }
+        
+        paper-spinner.white {
+            --paper-spinner-layer-1-color:  #FFFFFF;
+            --paper-spinner-layer-2-color:  #FFFFFF;
+            --paper-spinner-layer-3-color:  #FFFFFF;
+            --paper-spinner-layer-4-color:  #FFFFFF;
+            --paper-spinner-stroke-width:   2px;
+        }
+        
+        .logo {
+            padding-right:                  16px;    
+        }
+        
+        .subtitle {
+            font-size:                      12px;
+        }
+        
+        .closertitle {
+            position:                       relative;
+            left:                           -24px;
+        }
+
+        .username {
+            color:                          #FFFFFF;
+            font-size:                      14px;
+            padding-right:                  8px;
+            white-space:                    nowrap;
+            cursor:                         default;
+        }
+        
+        .menu {
+            color:                          #000000;
+        }
+        
+        .menuitem {
+            white-space:                    nowrap;
+            cursor:                         default;
+        }
+    </style>
+
+    <!-- Content of the component -->
+
+    <template>
+
+        <!-- Titlebar -->
+    
+        <paper-toolbar class="toolbar">
+
+            <!-- Drawer icon and title -->
+
+            <div class="horizontal center">
+                <template is="dom-if" if="{{hidedrawericon}}">
+                    <span class="title">{{apptitle}}</span>
+                </template>
+                <template is="dom-if" if="{{_isBack(back, hidedrawericon)}}">
+                    <paper-icon-button icon="arrow-back" on-tap="_back"></paper-icon-button>
+                    <span class="title">{{apptitle}}</span>
+                </template>
+                <template is="dom-if" if="{{!_hideDrawerIcon(back, hidedrawericon)}}">
+                    <paper-icon-button icon="menu" disabled$="{{context.menu.drawer.disable}}" on-tap="_showDrawer"></paper-icon-button>
+                    <span class="title closertitle">{{apptitle}}</span>
+                </template>
+            </div>
+            
+            <!-- Username -->
+            
+            <div class="flex"></div>
+            <template is="dom-if" if="{{!context.environment.browser.mobile}}">
+                <div class="username">{{context.user.name}}</div>
+            </template>
+
+            <!-- Progress indicator -->
+
+            <paper-spinner class="white" active$="{{wait}}"></paper-spinner>
+            
+            <!-- Menu -->
+            
+            <template is="dom-if" if="{{_hasMenu(menu)}}">
+                <paper-menu-button disabled$="{{context.menu.quickmenu.disable}}" horizontal-align="right" on-paper-dropdown-open="_menuOpened" on-paper-dropdown-close="_menuClosed">
+                    <paper-icon-button icon="more-vert" class="dropdown-trigger"></paper-icon-button>
+                    <paper-menu class="dropdown-content menu" on-iron-select="_mpSelected" selected="{{selectedMenupoint}}">
+                        <template is="dom-repeat" items="{{menu}}" as="m">
+                            <paper-item data-id$="{{_getMPID(m.id)}}" class="menuitem" on-tap="_menupointSelected">{{m.name}}</paper-item>
+                        </template>    
+                    </paper-menu>
+                </paper-menu-button>
+            </template>
+        </paper-toolbar>
+    </template>
+    
+    <!-- Script for the component -->
+
+    <script>
+        /*globals Polymer U P*/
+        
+        Polymer({
+            is:                     'app-titlebar',
+
+            /**
+             * Attributes.
+             */
+
+            properties: {
+                apptitle:           { type: String, notify: true, readyOnly: false },
+                back:               { type: Boolean, value: false, notify: true, readyOnly: false },
+                context:            { type: Object, notify: true, readyOnly: false },
+                wait:               { type: Boolean, notify: true, readyOnly: false },
+                hidedrawericon:     { type: Boolean, value: false, notify: true, readyOnly: false },
+                menu:               { type: Array, notify: true, readyOnly: false }
+            },
+
+            /**
+             * Polymer READY event.
+             */
+            
+            ready: function() {
+
+                // Reference to the current object
+
+                var self = this;
+                
+                // Initializing
+                
+                self.MENUID_PREFIX = 'menu_';
+            },
+
+            /**
+             * Has any menu defined for the titlebar?
+             *
+             * @param   {Array}     menu        defined menu
+             * @return  {Boolean}   hasmenu     does the menu defined
+             */
+
+            _hasMenu: function(menu) {
+                return menu && menu.length > 0;
+            },
+
+            /**
+             * Gets that the back icon must be shown or not.
+             *
+             * @param   {Boolean}   back            back button has to visible
+             * @param   {Boolean}   hidedrawericon  drawer icon has to be hidden
+             * @return  {Boolean}   backicon        back icon must be shown
+             */
+            
+            _isBack: function(back, hidedrawericon) {
+                return back && !hidedrawericon;
+            },
+
+            /**
+             * Gets that the drawer icon must be shown or not.
+             *
+             * @param   {Boolean}   back            back button has to visible
+             * @param   {Boolean}   hidedrawericon  drawer icon has to be hidden
+             * @return  {Boolean}   drawericon      drawer icon must be shown
+             */
+            
+            _hideDrawerIcon: function(back, hidedrawericon) {
+                return back || hidedrawericon;
+            },
+
+            /**
+             * Fires the "showdrawer" event when the user taps the drawer icon.
+             */
+            
+            _showDrawer: function() {
+             
+                // Reference to the current object
+
+                var self = this;
+
+                // Firing the "showdrawer" event
+                
+                self.fire('showdrawer');
+            },
+            
+            /**
+             * Fires the "back" event when the user taps the drawer icon.
+             */
+             
+            _back: function() {
+             
+                // Reference to the current object
+
+                var self = this;
+
+                // Firing the "back" event
+                
+                self.fire('back');
+            },
+
+            /**
+             * Gets that the ID of the menu.
+             *
+             * @param   {String}    id              ID of the menu
+             * @return  {String}    nodeid          ID of the node
+             */
+             
+            _getMPID: function(id) {
+
+                // Reference to the current object
+
+                var self = this;
+
+                // Returns the node ID of the menu
+                
+                return self.MENUID_PREFIX + id;    
+            },
+            
+            /**
+             * Event that fires when the user selects a menupoint from the menu.
+             * It fires the "menupoint-selected" event with the selected
+             * menupoint ID.
+             *
+             * @param   {Object}    event           event object
+             */
+             
+            _menupointSelected: function(event) {
+                
+                // Reference to the current object
+
+                var self = this;
+                
+                // Getting the selected menupoint node
+                
+                var node = event.target;
+                
+                while (!node.getAttribute('data-id')) {
+                    node = node.parentElement;
+                }
+                
+                // Firing the "menupoint-selected" event with the ID of the
+                // menupoint.
+                
+                self.fire(
+                    'menupoint-selected',
+                    node.getAttribute('data-id').substring(self.MENUID_PREFIX.length)
+                );
+            },
+            
+            /**
+             * Event that fires after the user selects a menupoint from the
+             * menu.
+             */
+             
+            _mpSelected: function() {
+
+                // Reference to the current object
+
+                var self = this;
+
+                // Reseting menupoint selection
+                
+                self.selectedMenupoint = -1;
+            },
+
+            /**
+             * Event that fires when the menu opened.
+             */
+            
+            _menuOpened: function() {
+
+                // Reference to the current object
+
+                var self = this;
+
+                // Setting quick menu state
+                
+                self.set('context.menu.quickmenu.opened', true);
+            },
+            
+            /**
+             * Event that fires when the menu closed.
+             */
+            
+            _menuClosed: function() {
+
+                // Reference to the current object
+
+                var self = this;
+
+                // Setting quick menu state
+                
+                self.set('context.menu.quickmenu.opened', false);
+            }            
+        });
+    </script>
+</dom-module>

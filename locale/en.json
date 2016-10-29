@@ -1,0 +1,308 @@
+{
+    "application_short": 	            "TANDA",
+    "application_long": 	            "Idő és Jelenlét nyilvántartó Rendszer",
+
+    "copyright":                        "Minden jog fenntartva © 2016, Business Process Services",
+    "webservicefail":                   "Hiba a szolgáltatás hívása közben. Próbála újra!",
+
+    "date": {
+        "longdateformat":               "YYYY MMMM D."
+    },
+    
+    "toolmenu": {
+        "help":                         "Súgó",
+        "profile":                      "Profil",
+        "settings":                     "Beállítások",
+        "logout":                       "Kijelentkezés",
+        "about":                        "Névjegy"
+    },
+    
+    "menu": {
+        "employee":                     "Dolgozó",
+        "employees":                    "Dolgozók",
+        "attendance":                   "Jelenlét",
+        "schedule":                     "Beosztás",
+        "allowance":                    "Pótlék",
+
+        "order":                        "Elrendelés",
+        "vacation":                     "Szabadság",
+        "overtime":                     "Túlóra",
+        "oncall":                       "Készenlét",
+        "approve":                      "Jóváhagyás",
+
+        "report":                       "Riport",
+        "organisationchart":            "Szervezeti ábra",
+        "blooddonationreport":          "Véradó riport",
+        "allowancereport":              "Pótlék riport",
+        "attendancereport":             "Jelenlét riport",
+        "dailymovereport":              "Napi mozgások",
+        "auditreport":                  "Audit riport",
+
+        "admin":                        "Adminisztráció",
+        "usermaintenance":              "Felhasználó karbantartás",
+        "workflow":                     "Jóváhagyási mód",
+        "closeopenmonth":               "Hónap zárás/nyitás",
+        "shifttype":                    "Műszak típusok",
+        
+        "importexport":                 "Import/Export",
+        "importcodes":                  "Kódszótár import",
+        "importemployees":              "Dolgozótörzs import",
+        "importdailymoves":             "Időadat betöltés",
+        "exporttobaber":                "Exportálás a BABÉR -ba"
+    },
+
+    "about": {
+        "title":                        "Névjegy",
+        "company":                      "Hewlett-Packard Magyarország Kft.",
+        "organisation":                 "Business Process Services",
+        "version":                      "verzió",
+        "comment":                      "Ez a számítógépes rendszer cégtulajdon és kizárólag csak jogosult felhasználók használhatják üzleti célból. Minden információ és adat amit létrehoztak, lekérdeztek, feldolgoztak vagy tároltak ez által a rendszer által (beleértve a személyes információkat is), felügyelet, vizsgálat vagy átvilágítás tárgyát képezheti amennyiben az ide vonatkozó törvények azt megengedik. Visszaélés vagy nem jogosult használat esete a dolgozó munkaviszonyának megszüntetését, polgári és/vagy büntetőjogi intézkedéseket vonhat maga után."
+    },
+    
+    "login": {
+        "email":                        "Email",
+        "password":                     "Jelszó",
+        "login":                        "Belépés",
+        "mandatoryfield":               "Kötelező mező",
+        "wrongpassword":                "Hibás email cím vagy jelszó",
+        "forgotpassword":               "Elfelejtette jelszavát?",
+        "logout":                       "Sikeresen kijelentkezett a rendszerből",
+        "emailsent":                    "Levele hamarosan megérkezik a megadott email címre"
+    },
+    
+    "newpassword": {
+        "mandatoryfield":               "Kötelező mező",
+        "forgotpassword": {
+            "title":                    "Elfelejtett jelszó",
+            "comment":                  "Egy levelet fogunk küldeni a \"HPE\" -től, így gyorsan meg tudja keresni. Ha nincs a levelesládájában, ellenőrizze a mappáit. Ha egy levélszemét szűrő vagy levél szabály elmozgatta a levelet lehet, hogy a Levél Szemét, Szemét, Kuka, Törölt Levelek, vagy az Archivált Levelek mappában van.",
+            "email":                    "Email",
+            "send":                     "Küld",
+            "cancel":                   "Mégsem"
+        },
+        "resetpassword": {
+            "title":                    "Jelszó beállítás",
+            "comment1":                 "Győződjön meg róla, hogy a megfelelő kis és nagybetű karaktereket gépeli be. Figyeljen a Caps Lock billentyűre. Az  \"Új jelszó\" és a \"Jelszó ismét\" mezők tartalmának meg kell egyeznie. A jelszónak a következő szabályoknak kell megfelelnie:",
+            "comment2":                 "Csak az angol ABC betűit, számokat és a +!%/=()-.,;#&@ karaktereket tartalmazhatja a jelszó. Legalább egy nagybetűt, egy számot és egy speciális karaktert kell tartalmazzon a jelszó. A jelszó nem egyezhet meg az utolsó 7 jelszó egyikével sem. A jelszó hossza minimum 8, maximum 64 karakter lehet. A jelszó 90 naponként lejár és kötelező megváltoztatni.",
+            "newpassword":              "Új jelszó",
+            "confirmpassword":          "Jelszó ismét",
+            "save":                     "Mentés",
+            "cancel":                   "Mégsem",
+            "invalidconfirmpassword":   "Az új és a megismételt jelszó nem egyezik"
+        }
+    },
+    
+    "employeefilter": {
+        "search":                       "Dolgozó szűrés",
+        "costcenter":                   "Költséghely",
+        "and":                          "ÉS",
+        "department":                   "Szervezeti egység",
+        "employeename":                 "Dolgozó név",
+        "employeeemail":                "Email"
+    },
+    
+    "shiftlegend": {
+        "shift":                        "Műszak"
+    },
+    
+    "vacationsummary": {
+        "title":                        "Szabadság összefoglaló",
+        "header": {
+            "type":                     "Szabadság",
+            "used":                     "Kivett",
+            "remained":                 "Maradék",
+            "total":                    "Összesen"
+        },
+        "total":                        "Összesen"
+    },
+    
+    "calendar": {
+        "title":                        "YYYY MMMM"
+    },
+    
+    "transaction": {
+        "error":                        "Hiba a tranzakció során"
+    },
+    
+    "usermaintenance": {
+        "title":                        "Felhasználó karbantartás",
+        "search":                       "Keres",
+        "fields": {
+            "email":                    "Email",
+            "username":                 "Felhasználó neve",
+            "active":                   "Aktív"
+        },
+        "save":                         "Mentés",
+        "cancel":                       "Mégsem",
+        "roles":                        "Szerepkörök",
+        "messages": {
+            "fail":                     "Hiba a szolgáltatás hívása közben. Próbála újra!",
+            "norole":                   "Legalább egy szerepkörrel kell rendelkezzen a felhasználó",
+            "newuser":                  "Az új felhasználó sikeresen létrejött",
+            "edituser":                 "A felhasználó adatait sikeresen módosította"
+        },
+        "maintenenancetitle": {
+            "new":                      "Új felhasználó",
+            "edit":                     "Felhasználó módosítás"
+        },
+        "mandatoryfield":               "Kötelező mező"
+   },
+   
+   "profile": {
+        "title":                        "Profil",
+        "email":                        "Email",
+        "name":                         "Név",
+        "newpassword":                  "Új jelszó",
+        "role":                         "Szerepkör"
+   },
+   
+   "orgchart": {
+        "title":                        "Szervezeti ábra"
+   },
+   
+   "vacation": {
+        "title":                        "Szabadság kiírás",
+        "messages": {
+            "fail":                     "Hiba a szolgáltatás hívása közben. Próbála újra!",
+            "save":                     "A szabadság kiírás megtörtént",
+            "invalid":                  "A szabadság kiírás a megadott időszakra nem lehetséges"
+        }
+   },
+
+   "report": {
+        "messages": {
+            "csvcreated":               "A CSV riport sikeresen létrejött",
+            "xlsxcreated":              "Az XLSX riport sikeresen létrejött",
+            "pdfcreated":               "A PDF riport sikeresen létrejött"
+        },
+        "output": {
+            "label":                    "Kimenet",
+            "screen":                   "Képernyő",
+            "csv":                      "CSV",
+            "xlsx":                     "XLS",
+            "pdf":                      "PDF"
+        }
+   },
+   
+   "auditreport": {
+        "title":                        "Audit riport",
+        "from":                         "Tól",
+        "to":                           "Ig",
+        "user":                         "Felhasználó",
+        "entry":                        "Tevékenység",
+        "mandatoryfield":               "Kötelező mező",
+        "report": {
+            "date":                     "Időpont",
+            "email":                    "Felhasználó email címe",
+            "name":                     "Felhasználó neve",
+            "message":                  "Tevékenység"
+        },
+        "timestampformat":              "YYYY MMMM D. HH:mm:ss",
+        "messages": {
+            "inavliddate":              "A kezdő dátum nem lehet nagyobb a végdátumnál"
+        }
+   },
+   
+   "settings": {
+       "title":                         "Beállítások",
+       "language": {
+            "label":                    "Nyelv",
+            "comment":                  "Az alkalmazás kommunikációs nyelve. Változtatásakor az alkalmazás újraindul a kiválasztott nyelven. Alapértelmezésként a böngésző nyelvén fog az alkalmazás kommunikálni, amennyiben az támogatott. Ha nem támogatott, akkor az angolul jelennek meg az üzenetek."
+       },
+       "company": {
+           "label":                     "Cég",
+           "comment":                   "A kiválasztott céghez tartozó jogosultságokkal és adatokkal tud tovább dolgozni. Változtatásakor az alkalmazás újból be fog töltődni, hogy a kiválasztott céghez tartozó hozzáférések beállítódjanak. A kiválasztott cég lesz az alapértelmezett cég a következő indításkor is."
+       }
+   },
+   
+   "allowance": {
+       "title":                         "Pótlék"
+   },
+   
+   "allowancereport": {
+       "title":                         "Pótlék riport"
+   },
+   
+   "approve": {
+       "title":                         "Jóváhagyás",
+        "search":                       "Keres",
+        "pending":                      "Folyamatban",
+        "table": {
+            "type":                     "Túlóra/Ügyelet",
+            "name":                     "Dolgozó név",
+            "email":                    "Dolgozó email",
+            "from":                     "Tól",
+            "to":                       "Ig",
+            "duration":                 "Időtartam [óra]",
+            "status":                   "Státusz"
+        },
+        "underapprove":                 "Jóváhagyás alatt",
+        "approved":                     "Jóváhagyott",
+        "rejected":                     "Elutasított",
+        "dateformat":                   "YYYY MMMM D. HH:mm",
+        "approvesuccess":               "A kijelölt tételeket sikeresen jóváhagyta",
+        "rejectsuccess":                "A kijelölt tételeket sikeresen elutasította"
+   },
+   
+   "closemonth": {
+       "title":                         "Hónap zárás/visszanyitás"
+   },
+   
+   "overtime": {
+       "title":                         "Túlóra elrendelés"
+   },
+   
+   "oncall": {
+       "title":                         "Ügyelet elrendelés"
+   },
+   
+   "workflow": {
+       "title":                         "Jóváhagyási mód",
+       "table": {
+            "department":               "Szervezeti egység",
+            "approveremail":            "Jóváhagyó email",
+            "approvername":             "Jóváhagyó neve",
+            "backupemail":              "Helyettes email",
+            "backupname":               "Helyettes neve"
+        },
+        "search":                       "Keres",
+        "approver":                     "Jóváhagyó",
+        "backup":                       "Helyettes",
+        "mandatoryfield":               "Kötelező mező",
+        "save":                         "Mentés",
+        "cancel":                       "Mégsem",
+        "editsuccess":                  "A jóvágyási módot sikeresen módosította",
+        "sameleaderandbackup":          "A jóváhagyó és helyettese nem lehet ugyanaz a személy"
+    },
+   
+   "bloodreport": {
+       "title":                         "Véradás riport"
+   },
+   
+   "importcodes": {
+       "title":                         "BABÉR kódszótár importálás"
+   },
+   
+   "importemployees": {
+       "title":                         "BABÉR dolgozótörzs importálás"
+   },
+
+   "importdailymoves": {
+       "title":                         "Időadat importálás"
+   },
+   
+   "exporttobaber": {
+       "title":                         "Exportálás a BABÉR -ba"
+   },
+   
+   "dailymovereport": {
+       "title":                         "Napi mozgások riportja"
+   },
+   
+   "attendancereport": {
+       "title":                         "Jelenléti riport"
+   },
+   
+   "employee": {
+       "dateformat":                    "YYYY MMMM D"
+   }
+}

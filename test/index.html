@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html>
+    <head>
+        <!-- Meta informations -->
+
+        <meta charset="utf-8">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <!-- Loading libraries -->
+    
+        <script src="test/jasmine-2.3.4/jasmine.js" type="text/javascript"></script>
+        <script src="test/jasmine-2.3.4/jasmine-html.js" type="text/javascript"></script>
+        <script src="test/jasmine-2.3.4/boot.js" type="text/javascript"></script>
+        <script src="../bower_components/webcomponentsjs/webcomponents-lite.js"></script>
+        <link href="../bower_components/polymer/polymer.html" rel="import">
+        <script src="../js/sprintf.min.js" type="text/javascript"></script>
+        <script src="../js/util.js" type="text/javascript"></script>
+        
+        <!-- Icon, style and title of the test page -->
+        
+        <link href="test/jasmine-2.3.4/jasmine_favicon.png" rel="shortcut icon" type="image/png">
+        <link href="test/jasmine-2.3.4/jasmine.css" rel="stylesheet" type="text/css">
+        <title>Test One Portal</title>
+    </head>
+     
+    <body unresolved>
+        <script>
+
+            // Getting the parameters in the URL
+
+            var p = Util.getURLParameters();
+
+            // Test cases
+
+            var test;
+
+            if (window.location.search.indexOf('?') >= 0 && 
+            window.location.search.indexOf('&') >= 0) {
+                throw new Error('Just one test unit can specified');
+            } else if (window.location.search) {
+
+                // Specific tests
+
+                test = [];
+
+                for (var pname in p) {
+                    if (p.hasOwnProperty(pname)) {
+                        test.push('test-' + pname + '.js');
+                    }
+                }
+            } else {
+
+                // All tests
+
+                test = [
+                    'test-util.js',
+                    'test-app-pws.js'
+                ];
+            }
+
+            // Loading test cases
+
+            for (var i = 0; i < test.length; i++) {
+                var script = document.createElement('script');
+                script.setAttribute('src', 'test/' + test[i]);
+
+                document.body.appendChild(script);
+            }
+
+            // Event test helper
+
+            var eventtest = {
+                FREQ:   100,
+                called: false,
+                count:  0,
+
+                init: function() {
+                    this.called = false;
+                    this.count = 0;
+                    this.data = undefined;
+                },
+
+                test: function(callback) {
+                    var self = this;
+
+                    setTimeout(function() {
+                        if (self.called) {
+                            callback(true);
+                        } else {
+                            self.count++;
+
+                            if (self.count == 300) {
+                                callback(false);    
+                            } else {
+                                self.test(callback);
+                            }
+                        }
+                    }, this.FREQ);
+                },
+
+                call: function() {
+                    this.called = true;
+                }
+            };
+        </script>
+    </body>
+</html>

@@ -1,0 +1,869 @@
+0 info it worked if it ends with ok
+1 verbose cli [ 'C:\\Program Files\\nodejs\\node.exe',
+1 verbose cli   'C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js',
+1 verbose cli   'install',
+1 verbose cli   'grunt-git' ]
+2 info using npm@2.14.7
+3 info using node@v4.2.3
+4 verbose install initial load of C:\Users\andra\Project\Ponty\package.json
+5 verbose installManyTop reading scoped package data from C:\Users\andra\Project\Ponty\node_modules\ftp-deploy\package.json
+6 verbose installManyTop reading scoped package data from C:\Users\andra\Project\Ponty\node_modules\grunt\package.json
+7 verbose installManyTop reading scoped package data from C:\Users\andra\Project\Ponty\node_modules\grunt-contrib-clean\package.json
+8 verbose installManyTop reading scoped package data from C:\Users\andra\Project\Ponty\node_modules\grunt-contrib-copy\package.json
+9 verbose installManyTop reading scoped package data from C:\Users\andra\Project\Ponty\node_modules\grunt-contrib-htmlmin\package.json
+10 verbose installManyTop reading scoped package data from C:\Users\andra\Project\Ponty\node_modules\grunt-ftp\package.json
+11 verbose installManyTop reading scoped package data from C:\Users\andra\Project\Ponty\node_modules\grunt-htmlcompressor\package.json
+12 verbose installManyTop reading scoped package data from C:\Users\andra\Project\Ponty\node_modules\grunt-inline\package.json
+13 verbose installManyTop reading scoped package data from C:\Users\andra\Project\Ponty\node_modules\grunt-mkdir\package.json
+14 verbose installManyTop reading scoped package data from C:\Users\andra\Project\Ponty\node_modules\grunt-stripcomments\package.json
+15 verbose installManyTop reading scoped package data from C:\Users\andra\Project\Ponty\node_modules\grunt-text-replace\package.json
+16 verbose installManyTop reading scoped package data from C:\Users\andra\Project\Ponty\node_modules\grunt-vulcanize\package.json
+17 verbose installManyTop reading scoped package data from C:\Users\andra\Project\Ponty\node_modules\vulcanize\package.json
+18 info package.json grunt@0.4.5 No license field.
+19 info package.json grunt-contrib-copy@0.7.0 No license field.
+20 info package.json grunt-htmlcompressor@0.1.10 No license field.
+21 info package.json ftp-deploy@1.1.0 No license field.
+22 info package.json grunt-contrib-clean@0.6.0 No license field.
+23 info package.json grunt-inline@0.3.6 No license field.
+24 info package.json grunt-stripcomments@0.3.1 No license field.
+25 info package.json grunt-text-replace@0.4.0 No license field.
+26 info package.json grunt-mkdir@1.0.0 No license field.
+27 verbose readDependencies loading dependencies from C:\Users\andra\Project\Ponty\package.json
+28 silly cache add args [ 'grunt-git', null ]
+29 verbose cache add spec grunt-git
+30 silly cache add parsed spec Result {
+30 silly cache add   raw: 'grunt-git',
+30 silly cache add   scope: null,
+30 silly cache add   name: 'grunt-git',
+30 silly cache add   rawSpec: '',
+30 silly cache add   spec: '*',
+30 silly cache add   type: 'range' }
+31 silly addNamed grunt-git@*
+32 verbose addNamed "*" is a valid semver range for grunt-git
+33 silly addNameRange { name: 'grunt-git', range: '*', hasData: false }
+34 silly mapToRegistry name grunt-git
+35 silly mapToRegistry using default registry
+36 silly mapToRegistry registry https://registry.npmjs.org/
+37 silly mapToRegistry uri https://registry.npmjs.org/grunt-git
+38 verbose addNameRange registry:https://registry.npmjs.org/grunt-git not in flight; fetching
+39 verbose request uri https://registry.npmjs.org/grunt-git
+40 verbose request no auth needed
+41 info attempt registry request try #1 at 9:45:08 AM
+42 verbose request id 337702dde5c64f82
+43 http request GET https://registry.npmjs.org/grunt-git
+44 http 200 https://registry.npmjs.org/grunt-git
+45 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+45 verbose headers   etag: '"5FSDN2NYRRL0FG9UEX9DSPJZV"',
+45 verbose headers   'content-type': 'application/json',
+45 verbose headers   'content-encoding': 'gzip',
+45 verbose headers   'cache-control': 'max-age=300',
+45 verbose headers   'content-length': '10884',
+45 verbose headers   'accept-ranges': 'bytes',
+45 verbose headers   date: 'Sat, 29 Oct 2016 07:45:08 GMT',
+45 verbose headers   via: '1.1 varnish',
+45 verbose headers   age: '0',
+45 verbose headers   connection: 'keep-alive',
+45 verbose headers   'x-served-by': 'cache-fra1243-FRA',
+45 verbose headers   'x-cache': 'HIT',
+45 verbose headers   'x-cache-hits': '1',
+45 verbose headers   'x-timer': 'S1477727107.884968,VS0,VE740',
+45 verbose headers   vary: 'Accept-Encoding' }
+46 silly get cb [ 200,
+46 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+46 silly get     etag: '"5FSDN2NYRRL0FG9UEX9DSPJZV"',
+46 silly get     'content-type': 'application/json',
+46 silly get     'content-encoding': 'gzip',
+46 silly get     'cache-control': 'max-age=300',
+46 silly get     'content-length': '10884',
+46 silly get     'accept-ranges': 'bytes',
+46 silly get     date: 'Sat, 29 Oct 2016 07:45:08 GMT',
+46 silly get     via: '1.1 varnish',
+46 silly get     age: '0',
+46 silly get     connection: 'keep-alive',
+46 silly get     'x-served-by': 'cache-fra1243-FRA',
+46 silly get     'x-cache': 'HIT',
+46 silly get     'x-cache-hits': '1',
+46 silly get     'x-timer': 'S1477727107.884968,VS0,VE740',
+46 silly get     vary: 'Accept-Encoding' } ]
+47 verbose get saving grunt-git to C:\Users\andra\AppData\Roaming\npm-cache\registry.npmjs.org\grunt-git\.cache.json
+48 silly addNameRange number 2 { name: 'grunt-git', range: '*', hasData: true }
+49 silly addNameRange versions [ 'grunt-git',
+49 silly addNameRange   [ '0.0.1',
+49 silly addNameRange     '0.1.0',
+49 silly addNameRange     '0.1.1',
+49 silly addNameRange     '0.1.2',
+49 silly addNameRange     '0.1.3',
+49 silly addNameRange     '0.1.4',
+49 silly addNameRange     '0.1.5',
+49 silly addNameRange     '0.1.6',
+49 silly addNameRange     '0.2.0',
+49 silly addNameRange     '0.2.1',
+49 silly addNameRange     '0.2.2',
+49 silly addNameRange     '0.2.3',
+49 silly addNameRange     '0.2.4',
+49 silly addNameRange     '0.2.5',
+49 silly addNameRange     '0.2.6',
+49 silly addNameRange     '0.2.7',
+49 silly addNameRange     '0.2.8',
+49 silly addNameRange     '0.2.9',
+49 silly addNameRange     '0.2.10',
+49 silly addNameRange     '0.2.11',
+49 silly addNameRange     '0.2.12',
+49 silly addNameRange     '0.2.13',
+49 silly addNameRange     '0.2.14',
+49 silly addNameRange     '0.3.1',
+49 silly addNameRange     '0.3.2',
+49 silly addNameRange     '0.3.3',
+49 silly addNameRange     '0.3.4',
+49 silly addNameRange     '0.3.5',
+49 silly addNameRange     '0.3.6',
+49 silly addNameRange     '0.3.7',
+49 silly addNameRange     '1.0.0',
+49 silly addNameRange     '1.0.1' ] ]
+50 silly addNamed grunt-git@1.0.1
+51 verbose addNamed "1.0.1" is a plain semver version for grunt-git
+52 silly mapToRegistry name grunt-git
+53 silly mapToRegistry using default registry
+54 silly mapToRegistry registry https://registry.npmjs.org/
+55 silly mapToRegistry uri https://registry.npmjs.org/grunt-git
+56 verbose addRemoteTarball https://registry.npmjs.org/grunt-git/-/grunt-git-1.0.1.tgz not in flight; adding
+57 verbose addRemoteTarball [ 'https://registry.npmjs.org/grunt-git/-/grunt-git-1.0.1.tgz',
+57 verbose addRemoteTarball   '485be9d955e10c0799af867ac6a778bd79427280' ]
+58 info retry fetch attempt 1 at 9:45:09 AM
+59 info attempt registry request try #1 at 9:45:09 AM
+60 http fetch GET https://registry.npmjs.org/grunt-git/-/grunt-git-1.0.1.tgz
+61 http fetch 200 https://registry.npmjs.org/grunt-git/-/grunt-git-1.0.1.tgz
+62 silly fetchAndShaCheck shasum 485be9d955e10c0799af867ac6a778bd79427280
+63 verbose addTmpTarball C:\Users\andra\AppData\Local\Temp\npm-8920-87af6b14\registry.npmjs.org\grunt-git\-\grunt-git-1.0.1.tgz not in flight; adding
+64 verbose addTmpTarball already have metadata; skipping unpack for grunt-git@1.0.1
+65 silly cache afterAdd grunt-git@1.0.1
+66 verbose afterAdd C:\Users\andra\AppData\Roaming\npm-cache\grunt-git\1.0.1\package\package.json not in flight; writing
+67 verbose afterAdd C:\Users\andra\AppData\Roaming\npm-cache\grunt-git\1.0.1\package\package.json written
+68 silly install resolved [ { name: 'grunt-git',
+68 silly install resolved     description: 'Git commands for grunt.',
+68 silly install resolved     version: '1.0.1',
+68 silly install resolved     homepage: 'https://github.com/rubenv/grunt-git',
+68 silly install resolved     author:
+68 silly install resolved      { name: 'Ruben Vermeersch',
+68 silly install resolved        email: 'ruben@savanne.be',
+68 silly install resolved        url: 'http://savanne.be/' },
+68 silly install resolved     repository: { type: 'git', url: 'git://github.com/rubenv/grunt-git.git' },
+68 silly install resolved     bugs: { url: 'https://github.com/rubenv/grunt-git/issues' },
+68 silly install resolved     licenses: [ [Object] ],
+68 silly install resolved     main: 'Gruntfile.js',
+68 silly install resolved     engines: { node: '>= 0.12.2' },
+68 silly install resolved     scripts: { test: 'grunt test' },
+68 silly install resolved     devDependencies:
+68 silly install resolved      { grunt: '~1.0.1',
+68 silly install resolved        'grunt-bump': '0.7.0',
+68 silly install resolved        'grunt-contrib-clean': '~1.0.0',
+68 silly install resolved        'grunt-contrib-jshint': '~1.0.0',
+68 silly install resolved        'grunt-contrib-watch': '~1.0.0',
+68 silly install resolved        'grunt-jscs': '~2.8.0',
+68 silly install resolved        'grunt-mocha-cli': '~2.1.0' },
+68 silly install resolved     peerDependencies: { grunt: '~1.0.1' },
+68 silly install resolved     keywords: [ 'gruntplugin' ],
+68 silly install resolved     dependencies: { flopmang: '^0.0.1' },
+68 silly install resolved     gitHead: '02f7d3c0f0bb7bbd24f6408b8de0213dfd0bc01d',
+68 silly install resolved     _id: 'grunt-git@1.0.1',
+68 silly install resolved     _shasum: '485be9d955e10c0799af867ac6a778bd79427280',
+68 silly install resolved     _from: 'grunt-git@*',
+68 silly install resolved     _npmVersion: '3.8.3',
+68 silly install resolved     _nodeVersion: '5.10.1',
+68 silly install resolved     _npmUser: { name: 'rubenv', email: 'ruben@savanne.be' },
+68 silly install resolved     maintainers: [ [Object] ],
+68 silly install resolved     dist:
+68 silly install resolved      { shasum: '485be9d955e10c0799af867ac6a778bd79427280',
+68 silly install resolved        tarball: 'https://registry.npmjs.org/grunt-git/-/grunt-git-1.0.1.tgz' },
+68 silly install resolved     _npmOperationalInternal:
+68 silly install resolved      { host: 'packages-12-west.internal.npmjs.com',
+68 silly install resolved        tmp: 'tmp/grunt-git-1.0.1.tgz_1476689978005_0.359310012543574' },
+68 silly install resolved     directories: {},
+68 silly install resolved     _resolved: 'https://registry.npmjs.org/grunt-git/-/grunt-git-1.0.1.tgz' } ]
+69 info install grunt-git@1.0.1 into C:\Users\andra\Project\Ponty
+70 info installOne grunt-git@1.0.1
+71 verbose installOne of grunt-git to C:\Users\andra\Project\Ponty not in flight; installing
+72 verbose lock using C:\Users\andra\AppData\Roaming\npm-cache\_locks\grunt-git-4e64adf6352df78b.lock for C:\Users\andra\Project\Ponty\node_modules\grunt-git
+73 silly install write writing grunt-git 1.0.1 to C:\Users\andra\Project\Ponty\node_modules\grunt-git
+74 verbose unbuild node_modules\grunt-git
+75 silly gentlyRm C:\Users\andra\Project\Ponty\node_modules\grunt-git is being purged from base C:\Users\andra\Project\Ponty
+76 verbose gentlyRm don't care about contents; nuking C:\Users\andra\Project\Ponty\node_modules\grunt-git
+77 verbose tar unpack C:\Users\andra\AppData\Roaming\npm-cache\grunt-git\1.0.1\package.tgz
+78 verbose tar unpacking to C:\Users\andra\Project\Ponty\node_modules\grunt-git
+79 silly gentlyRm C:\Users\andra\Project\Ponty\node_modules\grunt-git is being purged
+80 verbose gentlyRm don't care about contents; nuking C:\Users\andra\Project\Ponty\node_modules\grunt-git
+81 silly gunzTarPerm modes [ '777', '666' ]
+82 silly gunzTarPerm extractEntry package.json
+83 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+84 silly gunzTarPerm extractEntry README.md
+85 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+86 silly gunzTarPerm extractEntry LICENSE
+87 silly gunzTarPerm modified mode [ 'LICENSE', 420, 438 ]
+88 silly gunzTarPerm extractEntry Gruntfile.js
+89 silly gunzTarPerm modified mode [ 'Gruntfile.js', 420, 438 ]
+90 silly gunzTarPerm extractEntry .jscs.json
+91 silly gunzTarPerm modified mode [ '.jscs.json', 420, 438 ]
+92 silly gunzTarPerm extractEntry lib/command_add.js
+93 silly gunzTarPerm modified mode [ 'lib/command_add.js', 420, 438 ]
+94 silly gunzTarPerm extractEntry lib/command_diff.js
+95 silly gunzTarPerm modified mode [ 'lib/command_diff.js', 420, 438 ]
+96 silly gunzTarPerm extractEntry lib/command_fetch.js
+97 silly gunzTarPerm modified mode [ 'lib/command_fetch.js', 420, 438 ]
+98 silly gunzTarPerm extractEntry lib/command_log.js
+99 silly gunzTarPerm modified mode [ 'lib/command_log.js', 420, 438 ]
+100 silly gunzTarPerm extractEntry lib/command_commit.js
+101 silly gunzTarPerm modified mode [ 'lib/command_commit.js', 420, 438 ]
+102 silly gunzTarPerm extractEntry lib/command_pull.js
+103 silly gunzTarPerm modified mode [ 'lib/command_pull.js', 420, 438 ]
+104 silly gunzTarPerm extractEntry lib/command_push.js
+105 silly gunzTarPerm modified mode [ 'lib/command_push.js', 420, 438 ]
+106 silly gunzTarPerm extractEntry lib/command_rebase.js
+107 silly gunzTarPerm modified mode [ 'lib/command_rebase.js', 420, 438 ]
+108 silly gunzTarPerm extractEntry lib/command_reset.js
+109 silly gunzTarPerm modified mode [ 'lib/command_reset.js', 420, 438 ]
+110 silly gunzTarPerm extractEntry lib/command_revParse.js
+111 silly gunzTarPerm modified mode [ 'lib/command_revParse.js', 420, 438 ]
+112 silly gunzTarPerm extractEntry lib/command_clone.js
+113 silly gunzTarPerm modified mode [ 'lib/command_clone.js', 420, 438 ]
+114 silly gunzTarPerm extractEntry lib/command_rm.js
+115 silly gunzTarPerm modified mode [ 'lib/command_rm.js', 420, 438 ]
+116 silly gunzTarPerm extractEntry lib/command_clean.js
+117 silly gunzTarPerm modified mode [ 'lib/command_clean.js', 420, 438 ]
+118 silly gunzTarPerm extractEntry lib/command_stash.js
+119 silly gunzTarPerm modified mode [ 'lib/command_stash.js', 420, 438 ]
+120 silly gunzTarPerm extractEntry lib/command_checkout.js
+121 silly gunzTarPerm modified mode [ 'lib/command_checkout.js', 420, 438 ]
+122 silly gunzTarPerm extractEntry lib/command_tag.js
+123 silly gunzTarPerm modified mode [ 'lib/command_tag.js', 420, 438 ]
+124 silly gunzTarPerm extractEntry lib/command_archive.js
+125 silly gunzTarPerm modified mode [ 'lib/command_archive.js', 420, 438 ]
+126 silly gunzTarPerm extractEntry lib/commands.js
+127 silly gunzTarPerm modified mode [ 'lib/commands.js', 420, 438 ]
+128 silly gunzTarPerm extractEntry lib/command_merge.js
+129 silly gunzTarPerm modified mode [ 'lib/command_merge.js', 420, 438 ]
+130 silly gunzTarPerm extractEntry tasks/git.js
+131 silly gunzTarPerm modified mode [ 'tasks/git.js', 420, 438 ]
+132 silly gunzTarPerm extractEntry .travis.yml
+133 silly gunzTarPerm modified mode [ '.travis.yml', 420, 438 ]
+134 verbose write writing to C:\Users\andra\Project\Ponty\node_modules\grunt-git\package.json
+135 info preinstall grunt-git@1.0.1
+136 verbose readDependencies loading dependencies from C:\Users\andra\Project\Ponty\node_modules\grunt-git\package.json
+137 silly prepareForInstallMany adding flopmang@^0.0.1 from grunt-git dependencies
+138 silly prepareForInstallMany adding grunt@~1.0.1 from grunt-git peerDependencies
+139 warn peerDependencies The peer dependency grunt@~1.0.1 included from grunt-git will no
+140 warn peerDependencies longer be automatically installed to fulfill the peerDependency
+141 warn peerDependencies in npm 3+. Your application will need to depend on it explicitly.
+142 verbose readDependencies loading dependencies from C:\Users\andra\Project\Ponty\node_modules\grunt-git\package.json
+143 silly cache add args [ 'flopmang@^0.0.1', null ]
+144 verbose cache add spec flopmang@^0.0.1
+145 silly cache add parsed spec Result {
+145 silly cache add   raw: 'flopmang@^0.0.1',
+145 silly cache add   scope: null,
+145 silly cache add   name: 'flopmang',
+145 silly cache add   rawSpec: '^0.0.1',
+145 silly cache add   spec: '>=0.0.1 <0.0.2',
+145 silly cache add   type: 'range' }
+146 silly addNamed flopmang@>=0.0.1 <0.0.2
+147 verbose addNamed ">=0.0.1 <0.0.2" is a valid semver range for flopmang
+148 silly addNameRange { name: 'flopmang', range: '>=0.0.1 <0.0.2', hasData: false }
+149 silly mapToRegistry name flopmang
+150 silly mapToRegistry using default registry
+151 silly mapToRegistry registry https://registry.npmjs.org/
+152 silly mapToRegistry uri https://registry.npmjs.org/flopmang
+153 verbose addNameRange registry:https://registry.npmjs.org/flopmang not in flight; fetching
+154 verbose request uri https://registry.npmjs.org/flopmang
+155 verbose request no auth needed
+156 info attempt registry request try #1 at 9:45:09 AM
+157 http request GET https://registry.npmjs.org/flopmang
+158 http 200 https://registry.npmjs.org/flopmang
+159 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+159 verbose headers   etag: '"DUDIDOTVGTH0L5UIB0VEMPT1P"',
+159 verbose headers   'content-type': 'application/json',
+159 verbose headers   'content-encoding': 'gzip',
+159 verbose headers   'cache-control': 'max-age=300',
+159 verbose headers   'content-length': '3715',
+159 verbose headers   'accept-ranges': 'bytes',
+159 verbose headers   date: 'Sat, 29 Oct 2016 07:45:09 GMT',
+159 verbose headers   via: '1.1 varnish',
+159 verbose headers   age: '0',
+159 verbose headers   connection: 'keep-alive',
+159 verbose headers   'x-served-by': 'cache-fra1245-FRA',
+159 verbose headers   'x-cache': 'MISS',
+159 verbose headers   'x-cache-hits': '0',
+159 verbose headers   'x-timer': 'S1477727109.232422,VS0,VE727',
+159 verbose headers   vary: 'Accept-Encoding' }
+160 silly get cb [ 200,
+160 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+160 silly get     etag: '"DUDIDOTVGTH0L5UIB0VEMPT1P"',
+160 silly get     'content-type': 'application/json',
+160 silly get     'content-encoding': 'gzip',
+160 silly get     'cache-control': 'max-age=300',
+160 silly get     'content-length': '3715',
+160 silly get     'accept-ranges': 'bytes',
+160 silly get     date: 'Sat, 29 Oct 2016 07:45:09 GMT',
+160 silly get     via: '1.1 varnish',
+160 silly get     age: '0',
+160 silly get     connection: 'keep-alive',
+160 silly get     'x-served-by': 'cache-fra1245-FRA',
+160 silly get     'x-cache': 'MISS',
+160 silly get     'x-cache-hits': '0',
+160 silly get     'x-timer': 'S1477727109.232422,VS0,VE727',
+160 silly get     vary: 'Accept-Encoding' } ]
+161 verbose get saving flopmang to C:\Users\andra\AppData\Roaming\npm-cache\registry.npmjs.org\flopmang\.cache.json
+162 silly addNameRange number 2 { name: 'flopmang', range: '>=0.0.1 <0.0.2', hasData: true }
+163 silly addNameRange versions [ 'flopmang', [ '0.0.0', '0.0.1' ] ]
+164 silly addNamed flopmang@0.0.1
+165 verbose addNamed "0.0.1" is a plain semver version for flopmang
+166 silly mapToRegistry name flopmang
+167 silly mapToRegistry using default registry
+168 silly mapToRegistry registry https://registry.npmjs.org/
+169 silly mapToRegistry uri https://registry.npmjs.org/flopmang
+170 verbose addRemoteTarball https://registry.npmjs.org/flopmang/-/flopmang-0.0.1.tgz not in flight; adding
+171 verbose addRemoteTarball [ 'https://registry.npmjs.org/flopmang/-/flopmang-0.0.1.tgz',
+171 verbose addRemoteTarball   '73e4814eeeb94b44b5acfd8206d92756acdfb3e8' ]
+172 info retry fetch attempt 1 at 9:45:10 AM
+173 info attempt registry request try #1 at 9:45:10 AM
+174 http fetch GET https://registry.npmjs.org/flopmang/-/flopmang-0.0.1.tgz
+175 http fetch 200 https://registry.npmjs.org/flopmang/-/flopmang-0.0.1.tgz
+176 silly fetchAndShaCheck shasum 73e4814eeeb94b44b5acfd8206d92756acdfb3e8
+177 verbose addTmpTarball C:\Users\andra\AppData\Local\Temp\npm-8920-87af6b14\registry.npmjs.org\flopmang\-\flopmang-0.0.1.tgz not in flight; adding
+178 verbose addTmpTarball already have metadata; skipping unpack for flopmang@0.0.1
+179 silly cache afterAdd flopmang@0.0.1
+180 verbose afterAdd C:\Users\andra\AppData\Roaming\npm-cache\flopmang\0.0.1\package\package.json not in flight; writing
+181 verbose afterAdd C:\Users\andra\AppData\Roaming\npm-cache\flopmang\0.0.1\package\package.json written
+182 silly install resolved [ { name: 'flopmang',
+182 silly install resolved     version: '0.0.1',
+182 silly install resolved     description: 'Flag Option Manager for Grunt: framework for converting grunt task-options into CLI flags for child processes',
+182 silly install resolved     main: 'lib/argUtil.js',
+182 silly install resolved     engines: { node: '>= 0.8.0' },
+182 silly install resolved     scripts: { test: 'grunt test' },
+182 silly install resolved     repository:
+182 silly install resolved      { type: 'git',
+182 silly install resolved        url: 'https://github.com/dylancwood/flopmang.git' },
+182 silly install resolved     keywords:
+182 silly install resolved      [ 'grunt',
+182 silly install resolved        'tasks',
+182 silly install resolved        'options',
+182 silly install resolved        'arguments',
+182 silly install resolved        'flags',
+182 silly install resolved        'command',
+182 silly install resolved        'line' ],
+182 silly install resolved     author:
+182 silly install resolved      { name: 'Dylan Wood',
+182 silly install resolved        email: 'dylancwood@gmail.com',
+182 silly install resolved        url: 'bydywo.blogger.com' },
+182 silly install resolved     license: 'MIT',
+182 silly install resolved     bugs: { url: 'https://github.com/dylancwood/flopmang/issues' },
+182 silly install resolved     homepage: 'https://github.com/dylancwood/flopmang',
+182 silly install resolved     devDependencies:
+182 silly install resolved      { grunt: '~0.4.0',
+182 silly install resolved        'grunt-bump': '0.0.13',
+182 silly install resolved        'grunt-contrib-jshint': '~0.1.1',
+182 silly install resolved        'grunt-contrib-watch': '~0.5.3',
+182 silly install resolved        'grunt-jscs': '~0.6.1',
+182 silly install resolved        'grunt-mocha-cli': '~1.0.1' },
+182 silly install resolved     dependencies: { underscore: '^1.6.0', 'underscore.string': '^2.3.3' },
+182 silly install resolved     gitHead: '9bb84eef1ea946c453b3ecbd490cc3fc1ee2ceb5',
+182 silly install resolved     _id: 'flopmang@0.0.1',
+182 silly install resolved     _shasum: '73e4814eeeb94b44b5acfd8206d92756acdfb3e8',
+182 silly install resolved     _from: 'flopmang@>=0.0.1 <0.0.2',
+182 silly install resolved     _npmVersion: '1.4.20',
+182 silly install resolved     _npmUser: { name: 'dylancwood', email: 'dylancwood@gmail.com' },
+182 silly install resolved     maintainers: [ [Object] ],
+182 silly install resolved     dist:
+182 silly install resolved      { shasum: '73e4814eeeb94b44b5acfd8206d92756acdfb3e8',
+182 silly install resolved        tarball: 'https://registry.npmjs.org/flopmang/-/flopmang-0.0.1.tgz' },
+182 silly install resolved     directories: {},
+182 silly install resolved     _resolved: 'https://registry.npmjs.org/flopmang/-/flopmang-0.0.1.tgz' } ]
+183 info install flopmang@0.0.1 into C:\Users\andra\Project\Ponty\node_modules\grunt-git
+184 info installOne flopmang@0.0.1
+185 verbose installOne of flopmang to C:\Users\andra\Project\Ponty\node_modules\grunt-git not in flight; installing
+186 verbose lock using C:\Users\andra\AppData\Roaming\npm-cache\_locks\flopmang-12553b871b19ee13.lock for C:\Users\andra\Project\Ponty\node_modules\grunt-git\node_modules\flopmang
+187 silly install write writing flopmang 0.0.1 to C:\Users\andra\Project\Ponty\node_modules\grunt-git\node_modules\flopmang
+188 verbose unbuild node_modules\grunt-git\node_modules\flopmang
+189 silly gentlyRm C:\Users\andra\Project\Ponty\node_modules\grunt-git\node_modules\flopmang is being purged from base C:\Users\andra\Project\Ponty
+190 verbose gentlyRm don't care about contents; nuking C:\Users\andra\Project\Ponty\node_modules\grunt-git\node_modules\flopmang
+191 verbose tar unpack C:\Users\andra\AppData\Roaming\npm-cache\flopmang\0.0.1\package.tgz
+192 verbose tar unpacking to C:\Users\andra\Project\Ponty\node_modules\grunt-git\node_modules\flopmang
+193 silly gentlyRm C:\Users\andra\Project\Ponty\node_modules\grunt-git\node_modules\flopmang is being purged
+194 verbose gentlyRm don't care about contents; nuking C:\Users\andra\Project\Ponty\node_modules\grunt-git\node_modules\flopmang
+195 silly gunzTarPerm modes [ '777', '666' ]
+196 silly gunzTarPerm extractEntry package.json
+197 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+198 silly gunzTarPerm extractEntry .npmignore
+199 silly gunzTarPerm modified mode [ '.npmignore', 420, 438 ]
+200 silly gunzTarPerm extractEntry README.md
+201 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+202 silly gunzTarPerm extractEntry LICENSE
+203 silly gunzTarPerm modified mode [ 'LICENSE', 420, 438 ]
+204 silly gunzTarPerm extractEntry Gruntfile.js
+205 silly gunzTarPerm modified mode [ 'Gruntfile.js', 420, 438 ]
+206 silly gunzTarPerm extractEntry .jscs.json
+207 silly gunzTarPerm modified mode [ '.jscs.json', 420, 438 ]
+208 silly gunzTarPerm extractEntry .jshintrc
+209 silly gunzTarPerm modified mode [ '.jshintrc', 420, 438 ]
+210 silly gunzTarPerm extractEntry lib/arg.js
+211 silly gunzTarPerm modified mode [ 'lib/arg.js', 420, 438 ]
+212 silly gunzTarPerm extractEntry lib/argUtil.js
+213 silly gunzTarPerm modified mode [ 'lib/argUtil.js', 420, 438 ]
+214 silly gunzTarPerm extractEntry test/argUtil_test.js
+215 silly gunzTarPerm modified mode [ 'test/argUtil_test.js', 420, 438 ]
+216 silly gunzTarPerm extractEntry test/arg_test.js
+217 silly gunzTarPerm modified mode [ 'test/arg_test.js', 420, 438 ]
+218 verbose write writing to C:\Users\andra\Project\Ponty\node_modules\grunt-git\node_modules\flopmang\package.json
+219 info preinstall flopmang@0.0.1
+220 verbose readDependencies loading dependencies from C:\Users\andra\Project\Ponty\node_modules\grunt-git\node_modules\flopmang\package.json
+221 silly prepareForInstallMany adding underscore@^1.6.0 from flopmang dependencies
+222 silly prepareForInstallMany adding underscore.string@^2.3.3 from flopmang dependencies
+223 verbose readDependencies loading dependencies from C:\Users\andra\Project\Ponty\node_modules\grunt-git\node_modules\flopmang\package.json
+224 silly cache add args [ 'underscore@^1.6.0', null ]
+225 verbose cache add spec underscore@^1.6.0
+226 silly cache add args [ 'underscore.string@^2.3.3', null ]
+227 verbose cache add spec underscore.string@^2.3.3
+228 silly cache add parsed spec Result {
+228 silly cache add   raw: 'underscore@^1.6.0',
+228 silly cache add   scope: null,
+228 silly cache add   name: 'underscore',
+228 silly cache add   rawSpec: '^1.6.0',
+228 silly cache add   spec: '>=1.6.0 <2.0.0',
+228 silly cache add   type: 'range' }
+229 silly addNamed underscore@>=1.6.0 <2.0.0
+230 verbose addNamed ">=1.6.0 <2.0.0" is a valid semver range for underscore
+231 silly addNameRange { name: 'underscore', range: '>=1.6.0 <2.0.0', hasData: false }
+232 silly mapToRegistry name underscore
+233 silly mapToRegistry using default registry
+234 silly mapToRegistry registry https://registry.npmjs.org/
+235 silly mapToRegistry uri https://registry.npmjs.org/underscore
+236 verbose addNameRange registry:https://registry.npmjs.org/underscore not in flight; fetching
+237 silly cache add parsed spec Result {
+237 silly cache add   raw: 'underscore.string@^2.3.3',
+237 silly cache add   scope: null,
+237 silly cache add   name: 'underscore.string',
+237 silly cache add   rawSpec: '^2.3.3',
+237 silly cache add   spec: '>=2.3.3 <3.0.0',
+237 silly cache add   type: 'range' }
+238 silly addNamed underscore.string@>=2.3.3 <3.0.0
+239 verbose addNamed ">=2.3.3 <3.0.0" is a valid semver range for underscore.string
+240 silly addNameRange { name: 'underscore.string',
+240 silly addNameRange   range: '>=2.3.3 <3.0.0',
+240 silly addNameRange   hasData: false }
+241 silly mapToRegistry name underscore.string
+242 silly mapToRegistry using default registry
+243 silly mapToRegistry registry https://registry.npmjs.org/
+244 silly mapToRegistry uri https://registry.npmjs.org/underscore.string
+245 verbose addNameRange registry:https://registry.npmjs.org/underscore.string not in flight; fetching
+246 verbose request uri https://registry.npmjs.org/underscore
+247 verbose request no auth needed
+248 info attempt registry request try #1 at 9:45:10 AM
+249 http request GET https://registry.npmjs.org/underscore
+250 verbose request uri https://registry.npmjs.org/underscore.string
+251 verbose request no auth needed
+252 info attempt registry request try #1 at 9:45:10 AM
+253 http request GET https://registry.npmjs.org/underscore.string
+254 http 200 https://registry.npmjs.org/underscore
+255 verbose headers { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+255 verbose headers   etag: '"844UXC228GS2Y0TVSSWUEWOD6"',
+255 verbose headers   'content-type': 'application/json',
+255 verbose headers   'content-encoding': 'gzip',
+255 verbose headers   'cache-control': 'max-age=300',
+255 verbose headers   'content-length': '8059',
+255 verbose headers   'accept-ranges': 'bytes',
+255 verbose headers   date: 'Sat, 29 Oct 2016 07:45:10 GMT',
+255 verbose headers   via: '1.1 varnish',
+255 verbose headers   age: '245',
+255 verbose headers   connection: 'keep-alive',
+255 verbose headers   'x-served-by': 'cache-fra1230-FRA',
+255 verbose headers   'x-cache': 'HIT',
+255 verbose headers   'x-cache-hits': '2',
+255 verbose headers   'x-timer': 'S1477727110.389319,VS0,VE0',
+255 verbose headers   vary: 'Accept-Encoding' }
+256 silly get cb [ 200,
+256 silly get   { server: 'CouchDB/1.5.0 (Erlang OTP/R16B03)',
+256 silly get     etag: '"844UXC228GS2Y0TVSSWUEWOD6"',
+256 silly get     'content-type': 'application/json',
+256 silly get     'content-encoding': 'gzip',
+256 silly get     'cache-control': 'max-age=300',
+256 silly get     'content-length': '8059',
+256 silly get     'accept-ranges': 'bytes',
+256 silly get     date: 'Sat, 29 Oct 2016 07:45:10 GMT',
+256 silly get     via: '1.1 varnish',
+256 silly get     age: '245',
+256 silly get     connection: 'keep-alive',
+256 silly get     'x-served-by': 'cache-fra1230-FRA',
+256 silly get     'x-cache': 'HIT',
+256 silly get     'x-cache-hits': '2',
+256 silly get     'x-timer': 'S1477727110.389319,VS0,VE0',
+256 silly get     vary: 'Accept-Encoding' } ]
+257 verbose get saving underscore to C:\Users\andra\AppData\Roaming\npm-cache\registry.npmjs.org\underscore\.cache.json
+258 silly addNameRange number 2 { name: 'underscore', range: '>=1.6.0 <2.0.0', hasData: true }
+259 silly addNameRange versions [ 'underscore',
+259 silly addNameRange   [ '1.0.3',
+259 silly addNameRange     '1.0.4',
+259 silly addNameRange     '1.1.0',
+259 silly addNameRange     '1.1.1',
+259 silly addNameRange     '1.1.2',
+259 silly addNameRange     '1.1.3',
+259 silly addNameRange     '1.1.4',
+259 silly addNameRange     '1.1.5',
+259 silly addNameRange     '1.1.6',
+259 silly addNameRange     '1.1.7',
+259 silly addNameRange     '1.2.0',
+259 silly addNameRange     '1.2.1',
+259 silly addNameRange     '1.2.2',
+259 silly addNameRange     '1.2.3',
+259 silly addNameRange     '1.2.4',
+259 silly addNameRange     '1.3.0',
+259 silly addNameRange     '1.3.1',
+259 silly addNameRange     '1.3.2',
+259 silly addNameRange     '1.3.3',
+259 silly addNameRange     '1.4.0',
+259 silly addNameRange     '1.4.1',
+259 silly addNameRange     '1.4.2',
+259 silly addNameRange     '1.4.3',
+259 silly addNameRange     '1.4.4',
+259 silly addNameRange     '1.5.0',
+259 silly addNameRange     '1.5.1',
+259 silly addNameRange     '1.5.2',
+259 silly addNameRange     '1.6.0',
+259 silly addNameRange     '1.7.0',
+259 silly addNameRange     '1.8.0',
+259 silly addNameRange     '1.8.1',
+259 silly addNameRange     '1.8.2',
+259 silly addNameRange     '1.8.3' ] ]
+260 silly addNamed underscore@1.8.3
+261 verbose addNamed "1.8.3" is a plain semver version for underscore
+262 silly mapToRegistry name underscore
+263 silly mapToRegistry using default registry
+264 silly mapToRegistry registry https://registry.npmjs.org/
+265 silly mapToRegistry uri https://registry.npmjs.org/underscore
+266 verbose addRemoteTarball https://registry.npmjs.org/underscore/-/underscore-1.8.3.tgz not in flight; adding
+267 verbose addRemoteTarball [ 'https://registry.npmjs.org/underscore/-/underscore-1.8.3.tgz',
+267 verbose addRemoteTarball   '4f3fb53b106e6097fcf9cb4109f2a5e9bdfa5022' ]
+268 info retry fetch attempt 1 at 9:45:10 AM
+269 info attempt registry request try #1 at 9:45:10 AM
+270 http fetch GET https://registry.npmjs.org/underscore/-/underscore-1.8.3.tgz
+271 http 200 https://registry.npmjs.org/underscore.string
+272 verbose headers { server: 'CouchDB/1.6.1 (Erlang OTP/R16B03)',
+272 verbose headers   etag: '"348VXNFL9DZ8D7W5PJX8CAJJS"',
+272 verbose headers   'content-type': 'application/json',
+272 verbose headers   'content-encoding': 'gzip',
+272 verbose headers   'cache-control': 'max-age=300',
+272 verbose headers   'content-length': '14806',
+272 verbose headers   'accept-ranges': 'bytes',
+272 verbose headers   date: 'Sat, 29 Oct 2016 07:45:10 GMT',
+272 verbose headers   via: '1.1 varnish',
+272 verbose headers   age: '145',
+272 verbose headers   connection: 'keep-alive',
+272 verbose headers   'x-served-by': 'cache-fra1227-FRA',
+272 verbose headers   'x-cache': 'HIT',
+272 verbose headers   'x-cache-hits': '1',
+272 verbose headers   'x-timer': 'S1477727110.392450,VS0,VE0',
+272 verbose headers   vary: 'Accept-Encoding' }
+273 silly get cb [ 200,
+273 silly get   { server: 'CouchDB/1.6.1 (Erlang OTP/R16B03)',
+273 silly get     etag: '"348VXNFL9DZ8D7W5PJX8CAJJS"',
+273 silly get     'content-type': 'application/json',
+273 silly get     'content-encoding': 'gzip',
+273 silly get     'cache-control': 'max-age=300',
+273 silly get     'content-length': '14806',
+273 silly get     'accept-ranges': 'bytes',
+273 silly get     date: 'Sat, 29 Oct 2016 07:45:10 GMT',
+273 silly get     via: '1.1 varnish',
+273 silly get     age: '145',
+273 silly get     connection: 'keep-alive',
+273 silly get     'x-served-by': 'cache-fra1227-FRA',
+273 silly get     'x-cache': 'HIT',
+273 silly get     'x-cache-hits': '1',
+273 silly get     'x-timer': 'S1477727110.392450,VS0,VE0',
+273 silly get     vary: 'Accept-Encoding' } ]
+274 verbose get saving underscore.string to C:\Users\andra\AppData\Roaming\npm-cache\registry.npmjs.org\underscore.string\.cache.json
+275 silly addNameRange number 2 { name: 'underscore.string',
+275 silly addNameRange   range: '>=2.3.3 <3.0.0',
+275 silly addNameRange   hasData: true }
+276 silly addNameRange versions [ 'underscore.string',
+276 silly addNameRange   [ '0.9.2',
+276 silly addNameRange     '1.0.0',
+276 silly addNameRange     '1.1.3',
+276 silly addNameRange     '1.1.4',
+276 silly addNameRange     '1.1.5',
+276 silly addNameRange     '1.1.6',
+276 silly addNameRange     '2.0.0',
+276 silly addNameRange     '2.1.0',
+276 silly addNameRange     '2.1.1',
+276 silly addNameRange     '2.3.0',
+276 silly addNameRange     '2.3.1',
+276 silly addNameRange     '2.3.2',
+276 silly addNameRange     '2.2.1',
+276 silly addNameRange     '2.2.0-rc',
+276 silly addNameRange     '2.3.3',
+276 silly addNameRange     '2.4.0',
+276 silly addNameRange     '3.0.0',
+276 silly addNameRange     '3.0.1',
+276 silly addNameRange     '3.0.2',
+276 silly addNameRange     '3.0.3',
+276 silly addNameRange     '3.1.0',
+276 silly addNameRange     '3.1.1',
+276 silly addNameRange     '3.2.0',
+276 silly addNameRange     '3.2.1',
+276 silly addNameRange     '3.2.2',
+276 silly addNameRange     '3.2.3',
+276 silly addNameRange     '3.3.0',
+276 silly addNameRange     '3.3.2',
+276 silly addNameRange     '3.3.3',
+276 silly addNameRange     '3.3.4' ] ]
+277 silly addNamed underscore.string@2.4.0
+278 verbose addNamed "2.4.0" is a plain semver version for underscore.string
+279 silly mapToRegistry name underscore.string
+280 silly mapToRegistry using default registry
+281 silly mapToRegistry registry https://registry.npmjs.org/
+282 silly mapToRegistry uri https://registry.npmjs.org/underscore.string
+283 verbose addRemoteTarball https://registry.npmjs.org/underscore.string/-/underscore.string-2.4.0.tgz not in flight; adding
+284 verbose addRemoteTarball [ 'https://registry.npmjs.org/underscore.string/-/underscore.string-2.4.0.tgz',
+284 verbose addRemoteTarball   '8cdd8fbac4e2d2ea1e7e2e8097c42f442280f85b' ]
+285 info retry fetch attempt 1 at 9:45:10 AM
+286 info attempt registry request try #1 at 9:45:10 AM
+287 http fetch GET https://registry.npmjs.org/underscore.string/-/underscore.string-2.4.0.tgz
+288 http fetch 200 https://registry.npmjs.org/underscore/-/underscore-1.8.3.tgz
+289 http fetch 200 https://registry.npmjs.org/underscore.string/-/underscore.string-2.4.0.tgz
+290 silly fetchAndShaCheck shasum 8cdd8fbac4e2d2ea1e7e2e8097c42f442280f85b
+291 verbose addTmpTarball C:\Users\andra\AppData\Local\Temp\npm-8920-87af6b14\registry.npmjs.org\underscore.string\-\underscore.string-2.4.0.tgz not in flight; adding
+292 verbose addTmpTarball already have metadata; skipping unpack for underscore.string@2.4.0
+293 silly fetchAndShaCheck shasum 4f3fb53b106e6097fcf9cb4109f2a5e9bdfa5022
+294 verbose addTmpTarball C:\Users\andra\AppData\Local\Temp\npm-8920-87af6b14\registry.npmjs.org\underscore\-\underscore-1.8.3.tgz not in flight; adding
+295 verbose addTmpTarball already have metadata; skipping unpack for underscore@1.8.3
+296 silly cache afterAdd underscore.string@2.4.0
+297 verbose afterAdd C:\Users\andra\AppData\Roaming\npm-cache\underscore.string\2.4.0\package\package.json not in flight; writing
+298 silly cache afterAdd underscore@1.8.3
+299 verbose afterAdd C:\Users\andra\AppData\Roaming\npm-cache\underscore\1.8.3\package\package.json not in flight; writing
+300 verbose afterAdd C:\Users\andra\AppData\Roaming\npm-cache\underscore.string\2.4.0\package\package.json written
+301 verbose afterAdd C:\Users\andra\AppData\Roaming\npm-cache\underscore\1.8.3\package\package.json written
+302 silly install resolved [ { name: 'underscore.string',
+302 silly install resolved     version: '2.4.0',
+302 silly install resolved     description: 'String manipulation extensions for Underscore.js javascript library.',
+302 silly install resolved     homepage: 'http://epeli.github.com/underscore.string/',
+302 silly install resolved     contributors:
+302 silly install resolved      [ [Object],
+302 silly install resolved        [Object],
+302 silly install resolved        [Object],
+302 silly install resolved        [Object],
+302 silly install resolved        [Object],
+302 silly install resolved        [Object],
+302 silly install resolved        [Object],
+302 silly install resolved        [Object] ],
+302 silly install resolved     keywords: [ 'underscore', 'string' ],
+302 silly install resolved     main: './lib/underscore.string.js',
+302 silly install resolved     directories: { lib: './lib' },
+302 silly install resolved     engines: { node: '*' },
+302 silly install resolved     repository:
+302 silly install resolved      { type: 'git',
+302 silly install resolved        url: 'https://github.com/epeli/underscore.string.git' },
+302 silly install resolved     bugs: { url: 'https://github.com/epeli/underscore.string/issues' },
+302 silly install resolved     licenses: [ [Object] ],
+302 silly install resolved     scripts: { test: 'gulp test' },
+302 silly install resolved     devDependencies:
+302 silly install resolved      { gulp: '~3.8.10',
+302 silly install resolved        'gulp-uglify': '~1.0.1',
+302 silly install resolved        'gulp-qunit': '~1.0.0',
+302 silly install resolved        'gulp-clean': '~0.3.1',
+302 silly install resolved        'gulp-rename': '~1.2.0' },
+302 silly install resolved     _id: 'underscore.string@2.4.0',
+302 silly install resolved     dist:
+302 silly install resolved      { shasum: '8cdd8fbac4e2d2ea1e7e2e8097c42f442280f85b',
+302 silly install resolved        tarball: 'https://registry.npmjs.org/underscore.string/-/underscore.string-2.4.0.tgz' },
+302 silly install resolved     _from: 'underscore.string@>=2.3.3 <3.0.0',
+302 silly install resolved     _npmVersion: '1.3.24',
+302 silly install resolved     _npmUser: { name: 'epeli', email: 'esa-matti@suuronen.org' },
+302 silly install resolved     maintainers: [ [Object], [Object], [Object] ],
+302 silly install resolved     _shasum: '8cdd8fbac4e2d2ea1e7e2e8097c42f442280f85b',
+302 silly install resolved     _resolved: 'https://registry.npmjs.org/underscore.string/-/underscore.string-2.4.0.tgz' },
+302 silly install resolved   { name: 'underscore',
+302 silly install resolved     description: 'JavaScript\'s functional programming helper library.',
+302 silly install resolved     homepage: 'http://underscorejs.org',
+302 silly install resolved     keywords: [ 'util', 'functional', 'server', 'client', 'browser' ],
+302 silly install resolved     author: { name: 'Jeremy Ashkenas', email: 'jeremy@documentcloud.org' },
+302 silly install resolved     repository:
+302 silly install resolved      { type: 'git',
+302 silly install resolved        url: 'git://github.com/jashkenas/underscore.git' },
+302 silly install resolved     main: 'underscore.js',
+302 silly install resolved     version: '1.8.3',
+302 silly install resolved     devDependencies:
+302 silly install resolved      { docco: '*',
+302 silly install resolved        eslint: '0.6.x',
+302 silly install resolved        karma: '~0.12.31',
+302 silly install resolved        'karma-qunit': '~0.1.4',
+302 silly install resolved        'qunit-cli': '~0.2.0',
+302 silly install resolved        'uglify-js': '2.4.x' },
+302 silly install resolved     scripts:
+302 silly install resolved      { test: 'npm run test-node && npm run lint',
+302 silly install resolved        lint: 'eslint underscore.js test/*.js',
+302 silly install resolved        'test-node': 'qunit-cli test/*.js',
+302 silly install resolved        'test-browser': 'npm i karma-phantomjs-launcher && ./node_modules/karma/bin/karma start',
+302 silly install resolved        build: 'uglifyjs underscore.js -c "evaluate=false" --comments "/    .*/" -m --source-map underscore-min.map -o underscore-min.js',
+302 silly install resolved        doc: 'docco underscore.js' },
+302 silly install resolved     license: 'MIT',
+302 silly install resolved     files:
+302 silly install resolved      [ 'underscore.js',
+302 silly install resolved        'underscore-min.js',
+302 silly install resolved        'underscore-min.map',
+302 silly install resolved        'LICENSE' ],
+302 silly install resolved     gitHead: 'e4743ab712b8ab42ad4ccb48b155034d02394e4d',
+302 silly install resolved     bugs: { url: 'https://github.com/jashkenas/underscore/issues' },
+302 silly install resolved     _id: 'underscore@1.8.3',
+302 silly install resolved     _shasum: '4f3fb53b106e6097fcf9cb4109f2a5e9bdfa5022',
+302 silly install resolved     _from: 'underscore@>=1.6.0 <2.0.0',
+302 silly install resolved     _npmVersion: '1.4.28',
+302 silly install resolved     _npmUser: { name: 'jashkenas', email: 'jashkenas@gmail.com' },
+302 silly install resolved     maintainers: [ [Object] ],
+302 silly install resolved     dist:
+302 silly install resolved      { shasum: '4f3fb53b106e6097fcf9cb4109f2a5e9bdfa5022',
+302 silly install resolved        tarball: 'https://registry.npmjs.org/underscore/-/underscore-1.8.3.tgz' },
+302 silly install resolved     directories: {},
+302 silly install resolved     _resolved: 'https://registry.npmjs.org/underscore/-/underscore-1.8.3.tgz' } ]
+303 info install underscore.string@2.4.0 into C:\Users\andra\Project\Ponty\node_modules\grunt-git\node_modules\flopmang
+304 info install underscore@1.8.3 into C:\Users\andra\Project\Ponty\node_modules\grunt-git\node_modules\flopmang
+305 info installOne underscore.string@2.4.0
+306 verbose installOne of underscore.string to C:\Users\andra\Project\Ponty\node_modules\grunt-git\node_modules\flopmang not in flight; installing
+307 info installOne underscore@1.8.3
+308 verbose installOne of underscore to C:\Users\andra\Project\Ponty\node_modules\grunt-git\node_modules\flopmang not in flight; installing
+309 verbose lock using C:\Users\andra\AppData\Roaming\npm-cache\_locks\underscore-string-bc13d1ba9fcc0b47.lock for C:\Users\andra\Project\Ponty\node_modules\grunt-git\node_modules\flopmang\node_modules\underscore.string
+310 verbose lock using C:\Users\andra\AppData\Roaming\npm-cache\_locks\underscore-035d9187d02e65b8.lock for C:\Users\andra\Project\Ponty\node_modules\grunt-git\node_modules\flopmang\node_modules\underscore
+311 silly install write writing underscore.string 2.4.0 to C:\Users\andra\Project\Ponty\node_modules\grunt-git\node_modules\flopmang\node_modules\underscore.string
+312 silly install write writing underscore 1.8.3 to C:\Users\andra\Project\Ponty\node_modules\grunt-git\node_modules\flopmang\node_modules\underscore
+313 verbose unbuild node_modules\grunt-git\node_modules\flopmang\node_modules\underscore.string
+314 verbose unbuild node_modules\grunt-git\node_modules\flopmang\node_modules\underscore
+315 silly gentlyRm C:\Users\andra\Project\Ponty\node_modules\grunt-git\node_modules\flopmang\node_modules\underscore.string is being purged from base C:\Users\andra\Project\Ponty
+316 verbose gentlyRm don't care about contents; nuking C:\Users\andra\Project\Ponty\node_modules\grunt-git\node_modules\flopmang\node_modules\underscore.string
+317 silly gentlyRm C:\Users\andra\Project\Ponty\node_modules\grunt-git\node_modules\flopmang\node_modules\underscore is being purged from base C:\Users\andra\Project\Ponty
+318 verbose gentlyRm don't care about contents; nuking C:\Users\andra\Project\Ponty\node_modules\grunt-git\node_modules\flopmang\node_modules\underscore
+319 verbose tar unpack C:\Users\andra\AppData\Roaming\npm-cache\underscore.string\2.4.0\package.tgz
+320 verbose tar unpacking to C:\Users\andra\Project\Ponty\node_modules\grunt-git\node_modules\flopmang\node_modules\underscore.string
+321 silly gentlyRm C:\Users\andra\Project\Ponty\node_modules\grunt-git\node_modules\flopmang\node_modules\underscore.string is being purged
+322 verbose gentlyRm don't care about contents; nuking C:\Users\andra\Project\Ponty\node_modules\grunt-git\node_modules\flopmang\node_modules\underscore.string
+323 verbose tar unpack C:\Users\andra\AppData\Roaming\npm-cache\underscore\1.8.3\package.tgz
+324 verbose tar unpacking to C:\Users\andra\Project\Ponty\node_modules\grunt-git\node_modules\flopmang\node_modules\underscore
+325 silly gentlyRm C:\Users\andra\Project\Ponty\node_modules\grunt-git\node_modules\flopmang\node_modules\underscore is being purged
+326 verbose gentlyRm don't care about contents; nuking C:\Users\andra\Project\Ponty\node_modules\grunt-git\node_modules\flopmang\node_modules\underscore
+327 silly gunzTarPerm modes [ '777', '666' ]
+328 silly gunzTarPerm modes [ '777', '666' ]
+329 silly gunzTarPerm extractEntry package.json
+330 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+331 silly gunzTarPerm extractEntry package.json
+332 silly gunzTarPerm modified mode [ 'package.json', 420, 438 ]
+333 silly gunzTarPerm extractEntry README.md
+334 silly gunzTarPerm modified mode [ 'README.md', 420, 438 ]
+335 silly gunzTarPerm extractEntry LICENSE
+336 silly gunzTarPerm modified mode [ 'LICENSE', 420, 438 ]
+337 silly gunzTarPerm extractEntry .npmignore
+338 silly gunzTarPerm modified mode [ '.npmignore', 420, 438 ]
+339 silly gunzTarPerm extractEntry foo.js
+340 silly gunzTarPerm modified mode [ 'foo.js', 420, 438 ]
+341 silly gunzTarPerm extractEntry gulpfile.js
+342 silly gunzTarPerm modified mode [ 'gulpfile.js', 420, 438 ]
+343 silly gunzTarPerm extractEntry .travis.yml
+344 silly gunzTarPerm modified mode [ '.travis.yml', 420, 438 ]
+345 silly gunzTarPerm extractEntry underscore.js
+346 silly gunzTarPerm modified mode [ 'underscore.js', 420, 438 ]
+347 silly gunzTarPerm extractEntry underscore-min.js
+348 silly gunzTarPerm modified mode [ 'underscore-min.js', 420, 438 ]
+349 silly gunzTarPerm extractEntry underscore-min.map
+350 silly gunzTarPerm modified mode [ 'underscore-min.map', 420, 438 ]
+351 silly gunzTarPerm extractEntry README.markdown
+352 silly gunzTarPerm modified mode [ 'README.markdown', 420, 438 ]
+353 silly gunzTarPerm extractEntry bower.json
+354 silly gunzTarPerm modified mode [ 'bower.json', 420, 438 ]
+355 silly gunzTarPerm extractEntry component.json
+356 silly gunzTarPerm modified mode [ 'component.json', 420, 438 ]
+357 silly gunzTarPerm extractEntry lib/underscore.string.js
+358 silly gunzTarPerm modified mode [ 'lib/underscore.string.js', 420, 438 ]
+359 silly gunzTarPerm extractEntry libpeerconnection.log
+360 silly gunzTarPerm modified mode [ 'libpeerconnection.log', 420, 438 ]
+361 verbose write writing to C:\Users\andra\Project\Ponty\node_modules\grunt-git\node_modules\flopmang\node_modules\underscore.string\package.json
+362 info preinstall underscore.string@2.4.0
+363 verbose readDependencies loading dependencies from C:\Users\andra\Project\Ponty\node_modules\grunt-git\node_modules\flopmang\node_modules\underscore.string\package.json
+364 verbose write writing to C:\Users\andra\Project\Ponty\node_modules\grunt-git\node_modules\flopmang\node_modules\underscore\package.json
+365 verbose readDependencies loading dependencies from C:\Users\andra\Project\Ponty\node_modules\grunt-git\node_modules\flopmang\node_modules\underscore.string\package.json
+366 silly install resolved []
+367 verbose about to build C:\Users\andra\Project\Ponty\node_modules\grunt-git\node_modules\flopmang\node_modules\underscore.string
+368 info build C:\Users\andra\Project\Ponty\node_modules\grunt-git\node_modules\flopmang\node_modules\underscore.string
+369 info linkStuff underscore.string@2.4.0
+370 silly linkStuff underscore.string@2.4.0 has C:\Users\andra\Project\Ponty\node_modules\grunt-git\node_modules\flopmang\node_modules as its parent node_modules
+371 info preinstall underscore@1.8.3
+372 verbose readDependencies loading dependencies from C:\Users\andra\Project\Ponty\node_modules\grunt-git\node_modules\flopmang\node_modules\underscore\package.json
+373 verbose linkBins underscore.string@2.4.0
+374 verbose linkMans underscore.string@2.4.0
+375 verbose rebuildBundles underscore.string@2.4.0
+376 info install underscore.string@2.4.0
+377 verbose readDependencies loading dependencies from C:\Users\andra\Project\Ponty\node_modules\grunt-git\node_modules\flopmang\node_modules\underscore\package.json
+378 info postinstall underscore.string@2.4.0
+379 verbose unlock done using C:\Users\andra\AppData\Roaming\npm-cache\_locks\underscore-string-bc13d1ba9fcc0b47.lock for C:\Users\andra\Project\Ponty\node_modules\grunt-git\node_modules\flopmang\node_modules\underscore.string
+380 silly install resolved []
+381 verbose about to build C:\Users\andra\Project\Ponty\node_modules\grunt-git\node_modules\flopmang\node_modules\underscore
+382 info build C:\Users\andra\Project\Ponty\node_modules\grunt-git\node_modules\flopmang\node_modules\underscore
+383 info linkStuff underscore@1.8.3
+384 silly linkStuff underscore@1.8.3 has C:\Users\andra\Project\Ponty\node_modules\grunt-git\node_modules\flopmang\node_modules as its parent node_modules
+385 verbose linkBins underscore@1.8.3
+386 verbose linkMans underscore@1.8.3
+387 verbose rebuildBundles underscore@1.8.3
+388 info install underscore@1.8.3
+389 info postinstall underscore@1.8.3
+390 verbose unlock done using C:\Users\andra\AppData\Roaming\npm-cache\_locks\underscore-035d9187d02e65b8.lock for C:\Users\andra\Project\Ponty\node_modules\grunt-git\node_modules\flopmang\node_modules\underscore
+391 verbose about to build C:\Users\andra\Project\Ponty\node_modules\grunt-git\node_modules\flopmang
+392 info build C:\Users\andra\Project\Ponty\node_modules\grunt-git\node_modules\flopmang
+393 info linkStuff flopmang@0.0.1
+394 silly linkStuff flopmang@0.0.1 has C:\Users\andra\Project\Ponty\node_modules\grunt-git\node_modules as its parent node_modules
+395 verbose linkBins flopmang@0.0.1
+396 verbose linkMans flopmang@0.0.1
+397 verbose rebuildBundles flopmang@0.0.1
+398 verbose rebuildBundles [ 'underscore', 'underscore.string' ]
+399 info install flopmang@0.0.1
+400 info postinstall flopmang@0.0.1
+401 verbose unlock done using C:\Users\andra\AppData\Roaming\npm-cache\_locks\flopmang-12553b871b19ee13.lock for C:\Users\andra\Project\Ponty\node_modules\grunt-git\node_modules\flopmang
+402 verbose about to build C:\Users\andra\Project\Ponty\node_modules\grunt-git
+403 info build C:\Users\andra\Project\Ponty\node_modules\grunt-git
+404 info linkStuff grunt-git@1.0.1
+405 silly linkStuff grunt-git@1.0.1 has C:\Users\andra\Project\Ponty\node_modules as its parent node_modules
+406 verbose linkBins grunt-git@1.0.1
+407 verbose linkMans grunt-git@1.0.1
+408 verbose rebuildBundles grunt-git@1.0.1
+409 verbose rebuildBundles [ 'flopmang' ]
+410 info install grunt-git@1.0.1
+411 info postinstall grunt-git@1.0.1
+412 verbose readDependencies loading dependencies from C:\Users\andra\Project\Ponty\package.json
+413 verbose targetResolver reading package data from C:\Users\andra\Project\Ponty\node_modules\ftp-deploy\package.json
+414 verbose targetResolver reading package data from C:\Users\andra\Project\Ponty\node_modules\grunt\package.json
+415 verbose targetResolver reading package data from C:\Users\andra\Project\Ponty\node_modules\grunt-contrib-clean\package.json
+416 verbose targetResolver reading package data from C:\Users\andra\Project\Ponty\node_modules\grunt-contrib-copy\package.json
+417 verbose targetResolver reading package data from C:\Users\andra\Project\Ponty\node_modules\grunt-contrib-htmlmin\package.json
+418 verbose targetResolver reading package data from C:\Users\andra\Project\Ponty\node_modules\grunt-ftp\package.json
+419 verbose targetResolver reading package data from C:\Users\andra\Project\Ponty\node_modules\grunt-git\package.json
+420 verbose targetResolver reading package data from C:\Users\andra\Project\Ponty\node_modules\grunt-htmlcompressor\package.json
+421 verbose targetResolver reading package data from C:\Users\andra\Project\Ponty\node_modules\grunt-inline\package.json
+422 verbose targetResolver reading package data from C:\Users\andra\Project\Ponty\node_modules\grunt-mkdir\package.json
+423 verbose targetResolver reading package data from C:\Users\andra\Project\Ponty\node_modules\grunt-stripcomments\package.json
+424 verbose targetResolver reading package data from C:\Users\andra\Project\Ponty\node_modules\grunt-text-replace\package.json
+425 verbose targetResolver reading package data from C:\Users\andra\Project\Ponty\node_modules\grunt-vulcanize\package.json
+426 verbose targetResolver reading package data from C:\Users\andra\Project\Ponty\node_modules\vulcanize\package.json
+427 verbose targetResolver reading package data from C:\Users\andra\Project\Ponty\node_modules\.bin\vulcanize\package.json
+428 verbose already installed skipping grunt@~1.0.1 C:\Users\andra\Project\Ponty
+429 silly install resolved []
+430 verbose unlock done using C:\Users\andra\AppData\Roaming\npm-cache\_locks\grunt-git-4e64adf6352df78b.lock for C:\Users\andra\Project\Ponty\node_modules\grunt-git
+431 verbose validateInstall loading C:\Users\andra\Project\Ponty\package.json for validation
+432 verbose stack Error: The package grunt@0.4.5 does not satisfy its siblings' peerDependencies requirements!
+432 verbose stack     at C:\Program Files\nodejs\node_modules\npm\lib\install.js:125:32
+432 verbose stack     at C:\Program Files\nodejs\node_modules\npm\lib\install.js:268:7
+432 verbose stack     at C:\Program Files\nodejs\node_modules\npm\node_modules\read-installed\read-installed.js:142:5
+432 verbose stack     at C:\Program Files\nodejs\node_modules\npm\node_modules\read-installed\read-installed.js:263:14
+432 verbose stack     at cb (C:\Program Files\nodejs\node_modules\npm\node_modules\slide\lib\async-map.js:47:24)
+432 verbose stack     at C:\Program Files\nodejs\node_modules\npm\node_modules\read-installed\read-installed.js:263:14
+432 verbose stack     at cb (C:\Program Files\nodejs\node_modules\npm\node_modules\slide\lib\async-map.js:47:24)
+432 verbose stack     at C:\Program Files\nodejs\node_modules\npm\node_modules\read-installed\read-installed.js:263:14
+432 verbose stack     at cb (C:\Program Files\nodejs\node_modules\npm\node_modules\slide\lib\async-map.js:47:24)
+432 verbose stack     at C:\Program Files\nodejs\node_modules\npm\node_modules\read-installed\read-installed.js:263:14
+433 verbose cwd C:\Users\andra\Project\Ponty
+434 error Windows_NT 10.0.14393
+435 error argv "C:\\Program Files\\nodejs\\node.exe" "C:\\Program Files\\nodejs\\node_modules\\npm\\bin\\npm-cli.js" "install" "grunt-git"
+436 error node v4.2.3
+437 error npm  v2.14.7
+438 error code EPEERINVALID
+439 error peerinvalid The package grunt@0.4.5 does not satisfy its siblings' peerDependencies requirements!
+440 verbose exit [ 1, true ]

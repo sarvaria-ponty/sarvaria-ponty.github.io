@@ -1,0 +1,653 @@
+<!--
+Copyright (C) 2016 Application Development and Delivery <adnd@hpe.com>
+
+Permission to use, copy, modify, and/or distribute this software for any
+purpose with or without fee is hereby granted, provided that the above
+copyright notice and this permission notice appear in all copies.
+
+THE SOFTWARE IS PROVIDED "AS IS" AND THE AUTHOR DISCLAIMS ALL WARRANTIES
+WITH REGARD TO THIS SOFTWARE INCLUDING ALL IMPLIED WARRANTIES OF
+MERCHANTABILITY AND FITNESS. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR
+ANY SPECIAL, DIRECT, INDIRECT, OR CONSEQUENTIAL DAMAGES OR ANY DAMAGES
+WHATSOEVER RESULTING FROM LOSS OF USE, DATA OR PROFITS, WHETHER IN AN
+ACTION OF CONTRACT, NEGLIGENCE OR OTHER TORTIOUS ACTION, ARISING OUT OF
+OR IN CONNECTION WITH THE USE OR PERFORMANCE OF THIS SOFTWARE.
+-->
+
+<link rel="import" href="../bower_components/polymer/polymer.html">
+<link rel="import" href="../bower_components/iron-flex-layout/iron-flex-layout.html">
+<link rel="import" href="../bower_components/paper-drawer-panel/paper-drawer-panel.html">
+<link rel="import" href="../bower_components/neon-animation/neon-animated-pages.html">
+<link rel="import" href="../bower_components/neon-animation/neon-animations.html">
+<link rel="import" href="../bower_components/neon-animation/neon-animatable.html">
+<link rel="import" href="../bower_components/neon-animation/neon-shared-element-animatable-behavior.html">
+<link rel="import" href="../bower_components/paper-styles/typography.html">
+<link rel="import" href="../bower_components/paper-dialog/paper-dialog.html">
+<link rel="import" href="../bower_components/paper-toast/paper-toast.html">
+
+<link rel="import" href="app-locale.html">
+<link rel="import" href="app-db.html">
+<link rel="import" href="app-titlebar.html">
+<link rel="import" href="app-menu.html">
+<link rel="import" href="app-about.html">
+<link rel="import" href="app-login.html">
+<link rel="import" href="app-help.html">
+<link rel="import" href="app-profile.html">
+<link rel="import" href="app-settings.html">
+<link rel="import" href="app-employee.html">
+<link rel="import" href="app-attendance.html">
+<link rel="import" href="app-schedule.html">
+<link rel="import" href="app-shift.html">
+<link rel="import" href="app-employeecalendar.html">
+<link rel="import" href="app-vacation.html">
+<link rel="import" href="app-overtime.html">
+<link rel="import" href="app-oncall.html">
+<link rel="import" href="app-approve.html">
+<link rel="import" href="app-orgchart.html">
+<link rel="import" href="app-bloodreport.html">
+<link rel="import" href="app-allowancereport.html">
+<link rel="import" href="app-attendancereport.html">
+<link rel="import" href="app-dailymovereport.html">
+<link rel="import" href="app-auditreport.html">
+<link rel="import" href="app-usermaintenance.html">
+<link rel="import" href="app-workflow.html">
+<link rel="import" href="app-closemonth.html">
+<link rel="import" href="app-shifttype.html">
+<link rel="import" href="app-importcodes.html">
+<link rel="import" href="app-importemployees.html">
+<link rel="import" href="app-importdailymoves.html">
+<link rel="import" href="app-exporttobaber.html">
+
+<!--
+Description:
+
+Main module of the application.
+-->
+
+<dom-module id="app-main">
+
+    <!-- Style of the component -->
+
+    <style>
+        .menu {
+            overflow:                               auto;
+        }
+
+        .menupoint {
+            margin-left:                            16px;
+        }
+
+        paper-toast.error {
+            --paper-toast-background-color:         #DD2C00;
+        }        
+    </style>
+    
+    <!-- Content of the component -->
+
+    <template>
+
+        <!-- Loading the requested locale -->
+
+        <app-locale locales="{{locale}}"></app-locale>
+
+        <!-- Database loader -->
+
+        <app-db wait="{{wait}}" context="{{context}}" database="{{db}}"></app-db>
+        
+        <!-- Main -->
+
+        <div style$="{{_setStyle(context.environment)}}">
+            <paper-drawer-panel id="drawerpanel" force-narrow disable-swipe$="{{_isDisableDrawer(page, context.menu.drawer.disable)}}" on-iron-select="_drawerSelected">
+                <div main>
+    
+                    <!-- Titlebar -->
+        
+                    <app-titlebar apptitle="{{_getTitle(locale, context.environment.browser.mobile)}}" menu="{{menu}}" wait="{{wait}}" context="{{context}}" back="{{back}}" hidedrawericon="{{_isLoginPage(page)}}" on-showdrawer="_showDrawer" on-back="_showPreviousPage" on-menupoint-selected="_menupointSelected"></app-titlebar>
+
+                    <!-- Screen content -->
+
+                    <neon-animated-pages id="pagecontainer" style$="{{_setContentStyle(context.environment)}}" selected="{{_getPage(page)}}" entry-animation="[[entryAnimation]]" exit-animation="[[exitAnimation]]">
+
+                        <!-- Pages -->
+                        
+                        <app-login id="login" class="page" wait="{{wait}}" context="{{context}}" database="{{db}}" on-login="_login"></app-login>
+                        <app-help id="help" class="page" wait="{{wait}}" context="{{context}}" database="{{db}}"></app-help>
+                        <app-profile id="profile" class="page" wait="{{wait}}" context="{{context}}" database="{{db}}"></app-profile>
+                        <app-settings id="settings" class="page" wait="{{wait}}" context="{{context}}" database="{{db}}"></app-settings>
+                        <app-employee id="employee" class="page" wait="{{wait}}" context="{{context}}" database="{{db}}"></app-employee>
+                        <app-attendance id="attendance" class="page" wait="{{wait}}" context="{{context}}" database="{{db}}"></app-attendance>
+                        <app-schedule id="schedule" class="page" wait="{{wait}}" context="{{context}}" database="{{db}}"></app-schedule>
+                        <app-shift id="shift" class="page" wait="{{wait}}" context="{{context}}" database="{{db}}"></app-shift>
+                        <app-employeecalendar id="employeecalendar" class="page" wait="{{wait}}" context="{{context}}" database="{{db}}"></app-employeecalendar>
+                        <app-vacation id="vacation" class="page" wait="{{wait}}" context="{{context}}" database="{{db}}"></app-vacation>
+                        <app-overtime id="overtime" class="page" wait="{{wait}}" context="{{context}}" database="{{db}}"></app-overtime>
+                        <app-oncall id="oncall" class="page" wait="{{wait}}" context="{{context}}" database="{{db}}"></app-oncall>
+                        <app-approve id="approve" class="page" wait="{{wait}}" context="{{context}}" database="{{db}}"></app-approve>
+                        <app-orgchart id="orgchart" class="page" wait="{{wait}}" context="{{context}}"></app-orgchart>
+                        <app-bloodreport id="bloodreport" class="page" wait="{{wait}}" context="{{context}}" database="{{db}}"></app-bloodreport>
+                        <app-allowancereport id="allowancereport" class="page" wait="{{wait}}" context="{{context}}" database="{{db}}"></app-allowancereport>
+                        <app-attendancereport id="attendancereport" class="page" wait="{{wait}}" context="{{context}}" database="{{db}}"></app-attendancereport>
+                        <app-dailymovereport id="dailymovereport" class="page" wait="{{wait}}" context="{{context}}" database="{{db}}"></app-dailymovereport>
+                        <app-auditreport id="auditreport" class="page" wait="{{wait}}" context="{{context}}" database="{{db}}"></app-auditreport>
+                        <app-usermaintenance id="usermaintenance" class="page" wait="{{wait}}" context="{{context}}" database="{{db}}"></app-usermaintenance>
+                        <app-workflow id="workflow" class="page" wait="{{wait}}" context="{{context}}" database="{{db}}"></app-workflow>
+                        <app-closemonth id="closemonth" class="page" wait="{{wait}}" context="{{context}}" database="{{db}}"></app-closemonth>
+                        <app-shifttype id="shifttype" class="page" wait="{{wait}}" context="{{context}}" database="{{db}}"></app-shifttype>
+                        <app-importcodes id="importcodes" class="page" wait="{{wait}}" context="{{context}}" database="{{db}}"></app-importcodes>
+                        <app-importemployees id="importemployees" class="page" wait="{{wait}}" context="{{context}}" database="{{db}}"></app-importemployees>
+                        <app-importdailymoves id="importdailymoves" class="page" wait="{{wait}}" context="{{context}}" database="{{db}}"></app-importdailymoves>
+                        <app-exporttobaber id="exporttobaber" class="page" wait="{{wait}}" context="{{context}}" database="{{db}}"></app-exporttobaber>
+                    </neon-animated-pages>
+                </div>
+
+                <!-- Menu -->
+                
+                <div class="menu" drawer>, 
+                    <app-menu context="{{context}}" selected="{{menupoint}}" on-selected="_drawerMenupointSelected"></app-menu>
+                </div>
+            </paper-drawer-panel>
+        </div>
+        
+        <!-- About -->
+        
+        <app-about id="about" wait="{{wait}}" context="{{context}}" version="{{version}}"></app-about>
+
+        <!-- Toast messages -->
+        
+        <paper-toast id="toast" text="{{toastmessage}}"></paper-toast>
+        <paper-toast id="toasterror" class="error" text="{{toastmessage}}"></paper-toast>
+    </template>
+    
+    <!-- Script for the component -->
+
+    <script>
+        /*globals Polymer U P sprintf*/
+    
+        Polymer({
+            is:                     'app-main',
+
+            /**
+             * Attributes.
+             */
+
+            properties: {
+                environment:     { type: String, notify: true, readyOnly: false }
+            },
+
+            /**
+             * Observers.
+             */
+
+            observers: [
+                '_environmentChanged(environment)',
+                '_localeLoaded(locale)',
+                '_showToast(context.message.*)',
+                '_showToast(context.errormessage)'
+            ],
+            
+            /**
+             * Polymer READY event.
+             */
+            
+            ready: function() {
+
+                // Reference to the current object
+
+                var self = this;
+                
+                // Initializing
+
+                self.version = '1.0.2';
+                self.context = { menu: { drawer: { opened: false, disable: false }, quickmenu: { opened: false, disable: false } }, environment: { width: 0, height: 0, orientation: 'portrait', content: { width: 0, height: 0 }, browser: { type: 'Unknown', version: 0, mobile: false}}, message: '', errormessage: '' };
+                self.wait = false;                
+                self.back = false;
+                self.previousPage = [ { name: 'login', menu: [] } ];
+                self.page = 'login';
+            },
+            
+            /**
+             * Event that fires when the environment of the application has been
+             * changed.
+             *
+             * @param   {String}    environment environment of the application
+             */
+
+            _environmentChanged: function(environment) {
+
+                // Reference to the current object
+
+                var self = this;
+
+                // Processing the environment
+
+                var env = JSON.parse(environment);
+                
+                // Setting the height of the available screen
+                
+                var height;
+                
+                if (env.browser.mobile) {
+                    if (env.orientation == 'portrait') {
+                        height = env.height - 58;
+                    } else {
+                        height = env.height - 66;
+                    }
+                } else {
+                    height = env.height - 66;
+                }
+                
+                env.content = {
+                    width:          env.width,
+                    height:         height
+                };
+
+                self.set('context.environment', env);
+            },
+            
+            /**
+             * Registers the current locale in the context.
+             */
+             
+            _localeLoaded: function(locale) {
+                
+                // Reference to the current object
+
+                var self = this;
+                
+                // Registering the current locale in the context
+                
+                self.set('context.locale', locale.locale);
+            },
+
+            /**
+             * Sets the style of the main area.
+             *
+             * @param   {Object}    environment environment of the application
+             * @return  {String}    style       style of the main area
+             */
+
+            _setStyle: function(environment) {
+                return sprintf(
+                    'width: %dpx; height: %dpx',
+                    environment.width,
+                    environment.height
+                );
+            },
+
+            /**
+             * Sets the style of the content area.
+             *
+             * @param   {Object}    environment environment of the application
+             * @return  {String}    style       style of the content area
+             */
+             
+            _setContentStyle: function(environment) {
+                return sprintf(
+                    'height: %dpx',
+                    environment.content.height
+                );
+            },
+
+            /**
+             * Gets the title of the application based on the device type.
+             *
+             * @param   {Object}    locale      messages based on the locale
+             * @param   {Boolean}   mobile      is it a mobile device
+             * @return  {String}    title       title of the application
+             */
+            
+            _getTitle: function(locale, mobile) {
+                
+                // Reference to the current object
+
+                var self = this;
+
+                // Returns the title of the application
+
+                return mobile ? 
+                       self.locale.application_short : 
+                       self.locale.application_long;
+            },
+            
+            /**
+             * Does the active page the login page?
+             *
+             * @param   {String}    page        name of the current page
+             * @return  {Boolean}   loginpage   does the active page the login
+             *                                  page
+             */
+
+            _isLoginPage: function(page) {
+                return page == 'login';
+            },
+
+            /**
+             * Does the drawer disable?
+             *
+             * @param   {String}    page        name of the current page
+             * @param   {Boolean}   disable     disable the drawer
+             * @return  {Boolean}   disable     does the drawer disabled
+             */
+
+            _isDisableDrawer: function(page, disable) {
+
+                // Reference to the current object
+
+                var self = this;
+
+                // Returns the disable state of the drawer
+                
+                return self._isLoginPage(page) || disable;                 
+            },
+            
+            /**
+             * Gets the page number based on the specified page name.
+             *
+             * @param   {String}    page        name of the page
+             * @return  {Number}    pagenr      page number of the page
+             */
+            
+            _getPage: function(page) {
+
+                // Reference to the current object
+
+                var self = this;
+
+                // Getting the defined pages
+                
+                var pages = self.$.pagecontainer.querySelectorAll('.page');
+
+                // Searching index for the requested page
+
+                for (var i = 0; i < pages.length; i++) {
+                    if (pages[i].getAttribute('id') == page) {
+                        
+                        // Invoking the open method if it is defined
+                        
+                        if (pages[i].open) {
+                            pages[i].open();
+                        }
+                        
+                        // Returns the index of the page
+                        
+                        return i;
+                    }
+                }
+                
+                // Page not found
+                
+                return -1;
+            },
+            
+            /**
+             * Shows the drawer panel.
+             */
+             
+            _showDrawer: function() {
+
+                // Reference to the current object
+
+                var self = this;
+
+                // Opening the drawer panel
+                
+                self.$.drawerpanel.togglePanel();
+            },
+
+            /**
+             * Shows the specified page with the specified menu. If the menu
+             * does not specified it will be untouched.
+             *
+             * @param   {String}    page        name of the page
+             * @param   {Array}     menu        menu that holds the menupoints
+             */
+            
+            _showPage: function(page, menu) {
+
+                // Reference to the current object
+
+                var self = this;
+
+                // Setting the menu
+                
+                if (menu) {
+                    self.menu = menu;
+                }
+                
+                // Showing the page
+                
+                self.entryAnimation = 'fade-in-animation';
+                self.exitAnimation = 'fade-out-animation';
+                self.page = page;
+            },
+
+            /**
+             * Shows the previous page.
+             */
+             
+            _showPreviousPage: function() {
+
+                // Reference to the current object
+
+                var self = this;
+
+                // Getting the previous page
+                
+                var page = self.previousPage[self.previousPage.length - 1];
+                self.previousPage.pop();
+                
+                // Setting the back icon
+                
+                if (self.previousPage.length == 1) {
+                    self.back = false;
+                }
+                
+                // Showing the previous page
+                
+                self._showPage(page.name, page.menu);
+            },
+            
+            /**
+             * Shows the specified page with the specified menu. If the menu
+             * does not specified it will be untouched.
+             *
+             * @param   {String}    page        name of the page
+             * @param   {Array}     menu        menu that holds the menupoints
+             */
+             
+            _setBack: function(page, menu) {
+
+                // Reference to the current object
+
+                var self = this;
+
+                // Backuping the current page and showing the specified one
+                
+                self.back = true;
+                self.previousPage.push( { name: self.page, menu: self.menu });
+                self._showPage(page, menu);
+            },
+
+            /**
+             * Event that fires when the user selects a menupoint from the menu.
+             *
+             * @param   {Object}    event           event object
+             */
+            
+            _menupointSelected: function(event) {
+
+                // Reference to the current object
+
+                var self = this;
+                
+                // Getting the selected menupoint
+                
+                var mp = event.detail;
+                
+                // Showing help page
+
+                if (mp == 'help') {
+                    self._setBack('help', [
+                        { id: 'profile',    name: self.locale.toolmenu.profile },
+                        { id: 'settings',   name: self.locale.toolmenu.settings },
+                        { id: 'logout',     name: self.locale.toolmenu.logout },
+                        { id: 'about',      name: self.locale.toolmenu.about }
+                    ]);
+
+                // Showing profile page
+
+                } else if (mp == 'profile') {
+                    self._setBack('profile', [
+                        { id: 'help',       name: self.locale.toolmenu.help },
+                        { id: 'settings',   name: self.locale.toolmenu.settings },
+                        { id: 'logout',     name: self.locale.toolmenu.logout },
+                        { id: 'about',      name: self.locale.toolmenu.about }
+                    ]);
+
+                // Showing settings page
+                
+                } else if (mp == 'settings') {
+                    self._setBack('settings', [
+                        { id: 'help',       name: self.locale.toolmenu.help },
+                        { id: 'profile',    name: self.locale.toolmenu.profile },
+                        { id: 'logout',     name: self.locale.toolmenu.logout },
+                        { id: 'about',      name: self.locale.toolmenu.about }
+                    ]);
+
+                // Showing login page
+                
+                } else if (mp == 'logout') {
+                    self.$.login._logout();
+                    self._showPage('login', []);
+
+                // Showing about dialog
+
+                } else if (mp == 'about') {
+                    self.$.about.show();
+                }
+            },
+            
+            /**
+             * Event that fires when the login process finished successfully.
+             * Shows the first page of the application based on the current
+             * user's role.
+             */
+            
+            _login: function() {
+
+                // Reference to the current object
+
+                var self = this;
+
+                // Preparing and showing the main page
+
+                self.back = false;
+                self.previousPage = [ { name: 'login', menu: [] } ];
+                self.menupoint = 'employee';
+                self._showPage(self.menupoint, [
+                    { id: 'help',       name: self.locale.toolmenu.help },
+                    { id: 'profile',    name: self.locale.toolmenu.profile },
+                    { id: 'settings',   name: self.locale.toolmenu.settings },
+                    { id: 'logout',     name: self.locale.toolmenu.logout },
+                    { id: 'about',      name: self.locale.toolmenu.about }
+                ]);
+            },
+
+            /**
+             * Event that fires when the user selects a menupoint from the
+             * drawer menu.
+             *
+             * @param   {Object}    event           event object
+             */
+            
+            _drawerMenupointSelected: function(event) {
+
+                // Reference to the current object
+
+                var self = this;
+
+                // Closing the drawer
+                
+                self.$.drawerpanel.closeDrawer();
+                
+                // Getting the selected menupoint and showing its page
+                
+                self.menupoint = event.detail;
+                self._showPage(self.menupoint);
+            },
+            
+            /**
+             * Event that fires when the user opens or closes the drawer.
+             */
+             
+            _drawerSelected: function(event) {
+
+                // Reference to the current object
+
+                var self = this;
+
+                // Setting drawer menu state
+                
+                self.set(
+                    'context.menu.drawer.opened', 
+                    self.$.drawerpanel.selected == 'drawer'
+                );
+            },
+            
+            /**
+             * Shows the specified toast message.
+             * 
+             * @param   {Object}    message     message that has to show
+             */
+             
+            _showToast: function(message) {
+
+                // Reference to the current object
+
+                var self = this;
+
+                // Preparing
+
+                var msg;
+                var toastid;
+
+                // Getting the toast error message from string
+
+                if (typeof(message) == 'string') {
+                    if (message != '') {
+                        msg = message;
+                        toastid = 'toasterror';
+                    }
+
+                // Getting the toast message from string
+                    
+                } else if (typeof(message.value) == 'string') {
+                    if (message.value != '') {
+                        msg = message.value;
+                        toastid = message.path == 'context.message' ? 'toast' : 'toasterror';
+                    }
+                    
+                // Getting the toast message from object
+                
+                } else {
+                    if (message.value.content != '') {
+                        msg = message.value.content;
+                        toastid = 'toast' + (message.value.error ? 'error' : '');
+                    }
+                }
+                
+                // Showing toast message
+                
+                if (toastid) {
+                    self.toastmessage = msg;
+                    self.$[toastid].open();
+
+                    // Reseting the message
+
+                    self.set('context.message', '');
+                    self.set('context.errormessage', '');
+                }
+            }
+        });
+    </script>
+</dom-module>

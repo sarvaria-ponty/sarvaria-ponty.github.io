@@ -1,0 +1,15 @@
+{
+    "name":         "Tanda",
+    "description":  "Time and Attendance System",
+    "version":      "0.0.1",
+    "author":       { 
+                        "name":     "Application Development & Delivery",
+                        "email":    "adnd@hpe.com",
+                        "url":      "https://hpenterprise.sharepoint.com/teams/adnd"
+                    },
+    "private":      "true",
+    "repository": {
+    },
+    "dependencies": {
+    }
+}
